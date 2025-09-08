@@ -20,6 +20,7 @@ class OnBoardingScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
+              SizedBox(height: 30),
               CarouselSlider(
                 carouselController: controller.carouseSliderController,
                 items: controller.images,

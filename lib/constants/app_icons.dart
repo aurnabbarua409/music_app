@@ -5,4 +5,5 @@ class AppIcons {
   static const googleIcon = "$_baseName/google_icon.png";
   static const musicLogo = "$_baseName/music_logo.png";
   static const orangeIcon = "$_baseName/orange_icon.png";
+  static const arrowLeftIcon = "$_baseName/arrow_left_icon.png";
 }

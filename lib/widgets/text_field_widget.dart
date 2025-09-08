@@ -3,14 +3,19 @@ import 'package:music_app/constants/app_color.dart';
 import 'package:music_app/widgets/text_widget.dart';
 
 class TextFieldWidget extends StatelessWidget {
-  const TextFieldWidget({super.key, required this.label, this.controller, this.hintText});
+  const TextFieldWidget({
+    super.key,
+    required this.label,
+    this.controller,
+    this.hintText,
+  });
   final String label;
   final String? hintText;
   final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 20),
+      margin: EdgeInsets.symmetric(vertical: 10),
       child: Column(
         children: [
           Align(
