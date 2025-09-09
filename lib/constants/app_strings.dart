@@ -48,4 +48,38 @@ class AppStrings {
   static const passwordChangedDetails =
       "Your can now use your new password to login to your account.";
   static const backToLogin = "Back to Login";
+
+  // signup screen
+  static const signUp = "Sign Up";
+  static const signUpDatails =
+      "Sign in to resume your journey and discover more tunes.";
+  static const regularUser = "Regular User";
+  static const artist = "Artist";
+  static const fullName = "Full Name";
+  static const enterYourFullName = "Enter your full name";
+  static const email = "Email";
+  static const enterYourEmailAddress = "Enter your email Address";
+  static const createSecurePassword = "Create a secure password";
+  static const confirmPassword = "Confirm Password";
+  static const reEnterPassword = "Re-enter your password";
+  static const iAgreeToThe = "I agree to the";
+  static const termService = "term of Service";
+  static const privacyPolicy = "Privacy Policy";
+  static const createAccount = "Create Account";
+  static const alreadyhaveAccount = "Already have an account";
+  static const signInHere = "Sign in here.";
+  static const and = "and";
+  static const orSignUpWith = "Or sign up with";
+
+  // ==================== Home =======================
+  // Home screen
+  static const spintoDiscoverLuckySong = "Spin to Discover Lucky song!";
+  static const topPlaylist = "Top Playlist";
+  static const risingArtist = "Rising Artist";
+  static const liveShow = "Live Show";
+  static const dailyChallenge = "Daily Challenge";
+  static const followedPlaylist = "Followed Playlists";
+  static const recentlyAddedPlaylist = "Recently Added Playlist";
+  static const add3SongstoPlaylist =
+      "Add 3 songs to any playlist - Earn 25 coins";
 }

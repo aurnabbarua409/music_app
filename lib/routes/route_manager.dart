@@ -1,10 +1,14 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:music_app/routes/app_routes.dart';
 import 'package:music_app/screens/auth_screen/forgot_password_screen/forgot_password_screen.dart';
 import 'package:music_app/screens/auth_screen/password_changed_screen/password_changed_screen.dart';
 import 'package:music_app/screens/auth_screen/reset_password_screen/reset_password_screen.dart';
 import 'package:music_app/screens/auth_screen/sign_in_screen/sign_in_screen.dart';
+import 'package:music_app/screens/auth_screen/sign_up_screen/sign_up_screen.dart';
 import 'package:music_app/screens/auth_screen/verify_otp_screen/verify_otp_screen.dart';
+import 'package:music_app/screens/bottom_navbar_screen/bottom_navbar_screen.dart';
+import 'package:music_app/screens/home_screen/home_screen.dart';
 import 'package:music_app/screens/on_boarding_screen/on_boarding_screen.dart';
 import 'package:music_app/screens/splash_screen/splash_screen.dart';
 
@@ -27,6 +31,12 @@ class RouteManager {
       GetPage(
         name: AppRoutes.passwordChangedScreen,
         page: () => PasswordChangedScreen(),
+      ),
+      GetPage(name: AppRoutes.signUpScreen, page: () => SignUpScreen()),
+      GetPage(name: AppRoutes.homeScreen, page: () => HomeScreen()),
+      GetPage(
+        name: AppRoutes.bottomNavBarScreen,
+        page: () => BottomNavbarScreen(),
       ),
     ];
   }

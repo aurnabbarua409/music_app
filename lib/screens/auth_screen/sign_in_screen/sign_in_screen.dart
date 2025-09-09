@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:music_app/constants/app_color.dart';
+import 'package:music_app/constants/app_icons.dart';
 import 'package:music_app/constants/app_strings.dart';
 import 'package:music_app/screens/auth_screen/sign_in_screen/controller/sign_in_controller.dart';
 import 'package:music_app/screens/auth_screen/widgets/auth_header_widget.dart';
 import 'package:music_app/screens/auth_screen/widgets/auth_template_widget.dart';
+import 'package:music_app/screens/auth_screen/widgets/checkbox_widget.dart';
 import 'package:music_app/screens/auth_screen/widgets/divider_widget.dart';
-import 'package:music_app/screens/auth_screen/widgets/signin_button_widget.dart';
+import 'package:music_app/screens/auth_screen/widgets/password_visibility_widget.dart';
 import 'package:music_app/widgets/button_widget.dart';
 import 'package:music_app/widgets/text_field_widget.dart';
 import 'package:music_app/widgets/text_widget.dart';
@@ -23,16 +25,14 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   void initState() {
     super.initState();
-    _controller.emailController = TextEditingController();
-    _controller.passwordController = TextEditingController();
+    _controller.onInitial();
   }
 
   @override
   void dispose() {
     // TODO: implement dispose
     super.dispose();
-    _controller.emailController.dispose();
-    _controller.passwordController.dispose();
+    _controller.onDispose();
   }
 
   @override
@@ -49,27 +49,26 @@ class _SignInScreenState extends State<SignInScreen> {
           hintText: AppStrings.enterEmailAddress,
           controller: _controller.emailController,
         ),
-        TextFieldWidget(
-          label: AppStrings.password,
-          hintText: AppStrings.enterPassword,
-          controller: _controller.passwordController,
+        Obx(
+          () => TextFieldWidget(
+            label: AppStrings.password,
+            hintText: AppStrings.enterPassword,
+            obscureText: !_controller.isVisiblePassword.value,
+            controller: _controller.passwordController,
+            suffixIcon: PasswordVisibilityWidget(
+              onChanged: _controller.onIsVisiblePassword,
+              isVisible: _controller.isVisiblePassword.value,
+            ),
+          ),
         ),
         SizedBox(height: 15),
         Obx(
           () => Row(
             children: [
-              SizedBox(
-                height: 16,
-                width: 16,
-                child: Checkbox.adaptive(
-                  activeColor: AppColor.orange,
-                  value: _controller.isRememberMe.value,
-                  onChanged: (value) {
-                    _controller.onClickedRememberMe();
-                  },
-                ),
+              CheckboxWidget(
+                value: _controller.isRememberMe.value,
+                onChanged: _controller.onClickedRememberMe,
               ),
-              SizedBox(width: 10),
               TextWidget(
                 AppStrings.rememberMe,
                 fontSize: 12,
@@ -85,6 +84,52 @@ class _SignInScreenState extends State<SignInScreen> {
           ),
         ),
         SizedBox(height: 30),
+
+        // Container(
+        //   height: 50,
+        //   width: 250,
+        //   decoration: BoxDecoration(
+        //     borderRadius: BorderRadius.circular(30),
+        //     gradient: const LinearGradient(
+        //       colors: [
+        //         Color(0xFF2C2C2C), // top part dark
+        //         Color(0xFF1A1A1A), // bottom darker
+        //       ],
+        //       begin: Alignment.topCenter,
+        //       end: Alignment.bottomCenter,
+        //     ),
+        //   ),
+        //   child: Container(
+        //     decoration: BoxDecoration(
+        //       borderRadius: BorderRadius.circular(30),
+        //       border: Border.all(
+        //         width: 1.2,
+        //         style: BorderStyle.solid,
+        //         // lighting gradient border
+        //         color: Colors.transparent,
+        //       ),
+        //       gradient: const LinearGradient(
+        //         colors: [
+        //           Color(0x80FFFFFF), // soft white highlight
+        //           Color(0x20FFFFFF), // subtle fade
+        //         ],
+        //         begin: Alignment.topLeft,
+        //         end: Alignment.bottomRight,
+        //       ),
+        //     ),
+        //     child: const Center(
+        //       child: Text(
+        //         "Create Account",
+        //         style: TextStyle(
+        //           color: Colors.white,
+        //           fontWeight: FontWeight.bold,
+        //           fontSize: 16,
+        //         ),
+        //       ),
+        //     ),
+        //   ),
+        // ),
+        // LightingButton(text: AppStrings.signIn, onTap: () {}),
         ButtonWidget(
           onTap: _controller.onSignin,
           text: AppStrings.signIn,
@@ -106,7 +151,12 @@ class _SignInScreenState extends State<SignInScreen> {
           ],
         ),
         SizedBox(height: 30),
-        SigninButtonWidget(onTap: () {}),
+        ButtonWidget(
+          onTap: () {},
+          text: AppStrings.signWithGoogle,
+          icon: AppIcons.googleIcon,
+          iconPosition: IconPosition.beforeText,
+        ),
         SizedBox(height: 30),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -121,7 +171,7 @@ class _SignInScreenState extends State<SignInScreen> {
             ButtonWidget.text(
               text: AppStrings.signUpNow,
               fontWeight: FontWeight.w400,
-              onTap: () {},
+              onTap: _controller.onSignUp,
             ),
           ],
         ),

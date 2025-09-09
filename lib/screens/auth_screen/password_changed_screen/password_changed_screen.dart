@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:music_app/constants/app_strings.dart';
+import 'package:music_app/routes/app_routes.dart';
 import 'package:music_app/screens/auth_screen/widgets/auth_header_widget.dart';
 import 'package:music_app/screens/auth_screen/widgets/auth_template_widget.dart';
 import 'package:music_app/widgets/button_widget.dart';
@@ -23,7 +25,9 @@ class _PasswordChangedScreenState extends State<PasswordChangedScreen> {
         ),
         SizedBox(height: 20),
         ButtonWidget(
-          onTap: () {},
+          onTap: () {
+            Get.toNamed(AppRoutes.signInScreen);
+          },
           text: AppStrings.backToLogin,
           width: double.infinity,
         ),

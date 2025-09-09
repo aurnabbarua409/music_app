@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:music_app/constants/app_images.dart';
 import 'package:music_app/routes/app_routes.dart';
+import 'package:music_app/utils/app_log.dart';
 import 'package:music_app/widgets/image_widget.dart';
 
 class OnBoardingController extends GetxController {
@@ -27,11 +28,13 @@ class OnBoardingController extends GetxController {
     // TODO: implement onInit
     super.onInit();
     carouseSliderController = CarouselSliderController();
+    appLog(title: 'On boarding screen', descrition: 'initialized');
   }
 
   @override
   void onClose() {
     // TODO: implement onClose
     super.onClose();
+    appLog(title: 'On boarding screen', descrition: 'disposed');
   }
 }

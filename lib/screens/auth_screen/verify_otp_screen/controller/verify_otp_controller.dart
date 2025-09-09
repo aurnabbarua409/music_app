@@ -7,6 +7,7 @@ class VerifyOtpController extends GetxController {
   late List<TextEditingController> otpController;
   late List<FocusNode> focusNode;
   final otpLength = 6;
+  bool fromSignUp = false;
 
   void oninit() {
     appLog(
@@ -18,10 +19,17 @@ class VerifyOtpController extends GetxController {
       (index) => TextEditingController(),
     );
     focusNode = List.generate(otpLength, (index) => FocusNode());
+    final args = Get.arguments;
+    fromSignUp = args['fromSignUp'];
   }
 
   void onVerify() {
-    Get.toNamed(AppRoutes.resetPasswordScreen);
+    if (fromSignUp) {
+      Get.toNamed(AppRoutes.homeScreen);
+    }
+    else {
+      Get.toNamed(AppRoutes.resetPasswordScreen);
+    }
   }
 
   void ondispose() {

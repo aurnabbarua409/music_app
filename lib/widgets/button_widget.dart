@@ -5,12 +5,21 @@ import 'package:music_app/widgets/text_widget.dart';
 
 enum ButtonType { text, elevated, icon }
 
+enum IconPosition { beforeText, afterText }
+
 class ButtonWidget extends StatelessWidget {
   ButtonWidget({
     super.key,
     this.text,
     this.icon,
+    this.fontSize,
+    this.fontWeight,
+    this.height,
+    this.color,
+    this.backgroundColor,
+    this.borderColor,
     required this.onTap,
+    this.iconPosition,
     this.width,
   }) : buttonType = ButtonType.elevated;
   ButtonWidget.text({
@@ -18,6 +27,7 @@ class ButtonWidget extends StatelessWidget {
     required this.text,
     required this.onTap,
     this.fontSize,
+    this.color,
     this.fontWeight,
   }) : buttonType = ButtonType.text;
   ButtonWidget.icon({super.key, required this.icon, required this.onTap})
@@ -25,15 +35,20 @@ class ButtonWidget extends StatelessWidget {
   String? text;
   String? icon;
   double? width;
+  double? height;
   FontWeight? fontWeight;
   double? fontSize;
   Color? color;
+  Color? backgroundColor;
+  Color? borderColor;
+  IconPosition? iconPosition;
   final void Function() onTap;
   final ButtonType buttonType;
   @override
   Widget build(BuildContext context) {
     if (buttonType == ButtonType.icon) {
       return InkWell(
+        onTap: onTap,
         child: CircleAvatar(
           backgroundColor: AppColor.black_900,
           child: IconWidget(icon: icon!, width: 32, height: 32),
@@ -47,27 +62,36 @@ class ButtonWidget extends StatelessWidget {
           text!,
           fontSize: fontSize ?? 12,
           fontWeight: fontWeight ?? FontWeight.w500,
-          color: AppColor.orange,
+          color: color ?? AppColor.orange,
         ),
       );
     }
     return InkWell(
       onTap: onTap,
       child: Container(
-        height: 48,
-        width: width ?? 200,
+        height: height ?? 48,
+        width: width ?? double.infinity,
         padding: EdgeInsets.symmetric(vertical: 10),
         decoration: BoxDecoration(
-          color: AppColor.black_900,
-          border: Border.all(color: AppColor.white, width: 0.5),
+          color: backgroundColor ?? AppColor.black_900,
+          border: Border.all(color: borderColor ?? AppColor.white, width: 0.5),
           borderRadius: BorderRadius.circular(25),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextWidget(text ?? "", fontSize: 18, fontWeight: FontWeight.w700),
+            if (icon != null && iconPosition == IconPosition.beforeText)
+              IconWidget(icon: icon!),
             SizedBox(width: 10),
-            if (icon != null) IconWidget(icon: icon!),
+            TextWidget(
+              text ?? "",
+              color: color,
+              fontSize: fontSize ?? 18,
+              fontWeight: fontWeight ?? FontWeight.w700,
+            ),
+            SizedBox(width: 10),
+            if (icon != null && iconPosition == IconPosition.afterText)
+              IconWidget(icon: icon!),
           ],
         ),
       ),

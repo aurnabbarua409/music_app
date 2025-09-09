@@ -74,7 +74,9 @@ class OnBoardingScreen extends StatelessWidget {
               SizedBox(height: 30),
               ButtonWidget(
                 text: AppStrings.letsGo,
+                width: 200,
                 icon: AppIcons.musicLogo,
+                iconPosition: IconPosition.afterText,
                 onTap: controller.onClickedLetsGo,
               ),
             ],

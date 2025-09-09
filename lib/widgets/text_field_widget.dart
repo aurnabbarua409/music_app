@@ -8,9 +8,13 @@ class TextFieldWidget extends StatelessWidget {
     required this.label,
     this.controller,
     this.hintText,
+    this.suffixIcon,
+    this.obscureText = false,
   });
   final String label;
   final String? hintText;
+  final Widget? suffixIcon;
+  final bool obscureText;
   final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
@@ -32,10 +36,13 @@ class TextFieldWidget extends StatelessWidget {
           SizedBox(
             height: 48,
             child: TextFormField(
+              autofocus: true,
+              obscureText: obscureText,
               controller: controller,
               cursorColor: AppColor.grey_60,
               style: TextStyle(color: AppColor.grey_60),
               decoration: InputDecoration(
+                suffixIcon: suffixIcon,
                 hintText: hintText,
                 hintStyle: TextStyle(
                   color: AppColor.grey_60,
