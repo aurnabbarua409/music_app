@@ -14,4 +14,18 @@ class AppIcons {
   static const guiterIcon = "$_baseName/guiter_icon.png";
   static const playIconOutline = "$_baseName/play_icon_outline.png";
   static const musicIconOutline = "$_baseName/music_icon_outline.png";
+  static const homeIcon = "$_baseName/home_icon.png";
+  static const exploreIcon = "$_baseName/explore_icon.png";
+  static const addCircleIcon = "$_baseName/add_circle_icon.png";
+  static const searchIcon = "$_baseName/search_icon.png";
+  static const profileIcon = "$_baseName/profile_icon.png";
+  static const musicIcon2 = "$_baseName/music_icon2.png";
+  static const uploadIcon = "$_baseName/upload_icon.png";
+  static const loveIcon = "$_baseName/love_icon.png";
+  static const playBlackIcon = "$_baseName/play_black_icon.png";
+  static const timerIcon = "$_baseName/timer_icon.png";
+  static const downloadIcon = "$_baseName/download_icon.png";
+  static const shareIcon = "$_baseName/share_icon.png";
+  static const musicPLayingIcon = "$_baseName/music_playing_icon.png";
+  static const moreVertIcon = "$_baseName/more_vert_icon.png";
 }

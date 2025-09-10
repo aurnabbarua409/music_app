@@ -8,8 +8,10 @@ import 'package:music_app/screens/auth_screen/sign_in_screen/sign_in_screen.dart
 import 'package:music_app/screens/auth_screen/sign_up_screen/sign_up_screen.dart';
 import 'package:music_app/screens/auth_screen/verify_otp_screen/verify_otp_screen.dart';
 import 'package:music_app/screens/bottom_navbar_screen/bottom_navbar_screen.dart';
+import 'package:music_app/screens/create_new_playlist_screen/create_new_playlist_screen.dart';
 import 'package:music_app/screens/home_screen/home_screen.dart';
 import 'package:music_app/screens/on_boarding_screen/on_boarding_screen.dart';
+import 'package:music_app/screens/playlist_screen/playlist_screen.dart';
 import 'package:music_app/screens/splash_screen/splash_screen.dart';
 
 class RouteManager {
@@ -38,6 +40,11 @@ class RouteManager {
         name: AppRoutes.bottomNavBarScreen,
         page: () => BottomNavbarScreen(),
       ),
+      GetPage(
+        name: AppRoutes.createNewPlaylist,
+        page: () => CreateNewPlaylistScreen(),
+      ),
+      GetPage(name: AppRoutes.playListScreen, page: () => PlaylistScreen()),
     ];
   }
 }

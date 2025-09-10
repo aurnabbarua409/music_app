@@ -8,7 +8,11 @@ class AppBackgroundWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset(AppImages.backgroundImage, fit: BoxFit.cover),
+        Image.asset(
+          AppImages.backgroundImage,
+          fit: BoxFit.cover,
+          width: double.infinity,
+        ),
         SafeArea(
           child: Scaffold(backgroundColor: Colors.transparent, body: body),
         ),

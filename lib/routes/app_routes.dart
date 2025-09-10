@@ -9,4 +9,6 @@ class AppRoutes {
   static const signUpScreen = '/sign_up_screen';
   static const homeScreen = '/home_screen';
   static const bottomNavBarScreen = '/bottom_navbar_screen';
+  static const createNewPlaylist = '/create_new_playlist_screen';
+  static const playListScreen = '/play_list_screen';
 }

@@ -82,4 +82,18 @@ class AppStrings {
   static const recentlyAddedPlaylist = "Recently Added Playlist";
   static const add3SongstoPlaylist =
       "Add 3 songs to any playlist - Earn 25 coins";
+
+  static const createYourPlaylist = "Create Your Playlist";
+  static const uploadSong = "Upload song";
+
+  // Create new Playlist screen
+  static const playlistName = "Playlist Name";
+  static const create = "Create";
+  static const cancel = "Cancel";
+  static const myPlaylist = "My Playlist";
+
+  // Playlist screen
+  static const playlist = "Playlist";
+  static const songs = "Songs";
+  static const info = "Info";
 }

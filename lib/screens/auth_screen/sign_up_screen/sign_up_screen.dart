@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:glass/glass.dart';
 import 'package:music_app/constants/app_color.dart';
 import 'package:music_app/constants/app_icons.dart';
 import 'package:music_app/constants/app_strings.dart';
@@ -48,65 +49,58 @@ class _SignUpScreenState extends State<SignUpScreen> {
         ),
 
         Obx(
-          () => Container(
-            width: double.infinity,
-            padding: EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              color: AppColor.black,
-              borderRadius: BorderRadius.circular(25),
-            ),
-            child: _controller.isArtist.value
-                ? Row(
-                    children: [
-                      Expanded(
-                        child: ButtonWidget(
-                          text: AppStrings.regularUser,
-                          fontSize: 16,
-                          height: 44,
-                          fontWeight: FontWeight.w600,
-                          color: AppColor.white_900,
-                          backgroundColor: Colors.transparent,
-                          borderColor: Colors.transparent,
-                          onTap: () => _controller.onChooseUserType(false),
-                        ),
+          () =>
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: AppColor.grey_500,
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: ButtonWidget(
+                        enableGlassEffect: !_controller.isArtist.value,
+                        text: AppStrings.regularUser,
+                        fontSize: 16,
+                        height: 44,
+                        fontWeight: FontWeight.w600,
+                        backgroundColor: _controller.isArtist.value
+                            ? Colors.transparent
+                            : AppColor.grey_600,
+                        color: _controller.isArtist.value
+                            ? AppColor.white_900
+                            : AppColor.white,
+                        borderColor: Colors.transparent,
+                        onTap: () => _controller.onChooseUserType(false),
                       ),
-                      Expanded(
-                        child: ButtonWidget(
-                          onTap: () {},
-                          text: AppStrings.artist,
-                          height: 44,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ),
+                    ),
+                    Expanded(
+                      child: ButtonWidget(
+                        enableGlassEffect: _controller.isArtist.value,
+                        text: AppStrings.artist,
+                        backgroundColor: !_controller.isArtist.value
+                            ? Colors.transparent
+                            : AppColor.grey_600,
+                        fontSize: 16,
+                        height: 44,
+                        fontWeight: FontWeight.w600,
+                        color: _controller.isArtist.value
+                            ? AppColor.white
+                            : AppColor.white_900,
+                        borderColor: Colors.transparent,
+                        onTap: () => _controller.onChooseUserType(true),
                       ),
-                    ],
-                  )
-                : Row(
-                    children: [
-                      Expanded(
-                        child: ButtonWidget(
-                          onTap: () {},
-                          text: AppStrings.regularUser,
-                          height: 44,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      Expanded(
-                        child: ButtonWidget(
-                          text: AppStrings.artist,
-                          fontSize: 16,
-                          height: 44,
-                          fontWeight: FontWeight.w600,
-                          color: AppColor.white_900,
-                          backgroundColor: Colors.transparent,
-                          borderColor: Colors.transparent,
-                          onTap: () => _controller.onChooseUserType(true),
-                        ),
-                      ),
-                    ],
-                  ),
-          ),
+                    ),
+                  ],
+                ),
+              ).asGlass(
+                tintColor: Colors.white, // subtle white tint
+                blurX: 20, // horizontal blur
+                blurY: 20, // vertical blur
+                clipBorderRadius: BorderRadius.circular(25),
+              ),
         ),
         TextFieldWidget(
           label: AppStrings.fullName,

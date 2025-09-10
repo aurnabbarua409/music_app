@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:music_app/screens/bottom_navbar_screen/controller/bottom_nav_controller.dart';
 import 'package:music_app/widgets/custom_bottom_navbar_widget.dart';
 
 class BottomNavbarScreen extends StatefulWidget {
@@ -9,21 +11,17 @@ class BottomNavbarScreen extends StatefulWidget {
 }
 
 class _BottomNavbarScreenState extends State<BottomNavbarScreen> {
-  int selectedIndex = 0;
-
-  void onNavItemTapped(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
-  }
+  final _controller = Get.put(BottomNavController());
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: Text('Page ${selectedIndex + 1}')),
-      bottomNavigationBar: CustomBottomNavBar(
-        selectedIndex: selectedIndex,
-        onItemSelected: onNavItemTapped,
+    return Obx(
+      () => Scaffold(
+        body: _controller.pages[_controller.selectedIndex.value],
+        bottomNavigationBar: CustomBottomNavBar(
+          selectedIndex: _controller.selectedIndex.value,
+          onItemSelected: (value) => _controller.onNavItemTapped(value),
+        ),
       ),
     );
   }

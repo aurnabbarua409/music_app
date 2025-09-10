@@ -4,16 +4,24 @@ class AppColor {
   // white
   static const Color white = Colors.white;
   static const Color white_900 = Color(0xFFBDBDBD);
+  static const Color fadeWhite = Color(0xFFF2F2F2);
 
   // black
   static const Color black = Colors.black;
   static const Color black_900 = Color(0xFF392f2e);
   static const Color black_800 = Color(0xFF2A2A2F);
+  static const Color black_700 = Color(0xFF1f1f1f);
 
   // orange
   static const Color orange = Color(0xFFF0592B);
 
   // grey
   static const Color grey_60 = Color(0xFF999999);
-  static const Color grey_800 = Color(0xFF424242);
+  static const Color grey_800 = Color(0xFF353535);
+  static const Color grey_700 = Color(0xFF313133);
+  static const Color grey_600 = Color(0xFF5c5c5d);
+  static const Color grey_500 = Color(0xFF4b4a4c);
+
+  // green
+  static const Color green_900 = Color(0xFF46BE67);
 }

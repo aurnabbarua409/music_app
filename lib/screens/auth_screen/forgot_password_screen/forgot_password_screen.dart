@@ -41,6 +41,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         ),
         TextFieldWidget(
           label: AppStrings.emailAdress,
+        
           hintText: AppStrings.enterEmailAddress,
           controller: _controller.emailController,
         ),
