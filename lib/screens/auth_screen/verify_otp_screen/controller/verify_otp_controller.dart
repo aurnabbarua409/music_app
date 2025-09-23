@@ -25,9 +25,8 @@ class VerifyOtpController extends GetxController {
 
   void onVerify() {
     if (fromSignUp) {
-      Get.toNamed(AppRoutes.homeScreen);
-    }
-    else {
+      Get.offAllNamed(AppRoutes.bottomNavBarScreen);
+    } else {
       Get.toNamed(AppRoutes.resetPasswordScreen);
     }
   }

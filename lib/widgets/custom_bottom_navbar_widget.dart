@@ -31,13 +31,13 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
 
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      decoration: BoxDecoration(color: AppColor.black_700),
+      decoration: BoxDecoration(color: AppColors.black_700),
       child:
-          Container(           
+          Container(
             padding: const EdgeInsets.symmetric(vertical: 10),
             decoration: BoxDecoration(
-              border: Border.all(color: AppColor.white, width: 0.1),
-              color: AppColor.grey_800,
+              border: Border.all(color: AppColors.black_900, width: 0.1),
+              color: AppColors.grey_800,
               boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 5)],
               borderRadius: BorderRadius.circular(25),
             ),
@@ -48,25 +48,24 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
 
                 return InkWell(
                   onTap: () => widget.onItemSelected(index),
-                  child:
-                      AnimatedContainer(
-                        duration: const Duration(milliseconds: 250),
-                        padding: const EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 0.1,
-                            color: isSelected
-                                ? AppColor.grey_60
-                                : Colors.transparent,
-                          ),
-                          shape: BoxShape.circle,
-                        ),
-                        child: IconWidget(icon: items[index], scale: 1.2),
-                      ).asGlass(
-                        enabled: isSelected,
-                        clipBorderRadius: BorderRadius.circular(50),
-                        tintColor: const Color.fromARGB(255, 255, 0, 0),
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 250),
+                    padding: const EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 0.1,
+                        color: isSelected
+                            ? AppColors.grey_60
+                            : Colors.transparent,
                       ),
+                      shape: BoxShape.circle,
+                    ),
+                    child: IconWidget(icon: items[index], scale: 1.2),
+                  ).asGlass(
+                    enabled: isSelected,
+                    clipBorderRadius: BorderRadius.circular(50),
+                    tintColor: const Color.fromARGB(255, 255, 0, 0),
+                  ),
                 );
               }),
             ),

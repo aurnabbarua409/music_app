@@ -30,7 +30,7 @@ class AuthHeaderWidget extends StatelessWidget {
           subtitle,
           fontSize: 14,
           fontWeight: FontWeight.w400,
-          color: AppColor.white_900,
+          color: AppColors.white_900,
         ),
         SizedBox(height: 20),
       ],

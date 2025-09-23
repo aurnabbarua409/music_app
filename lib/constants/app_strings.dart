@@ -96,4 +96,12 @@ class AppStrings {
   static const playlist = "Playlist";
   static const songs = "Songs";
   static const info = "Info";
+  static const writeComment = "Write a comment";
+
+  // Now playing screen
+  static const nowPlaying = "Now Playing";
+  static const share = "Share";
+  static const addYourPlaylist = "Add to your Playlist";
+  static const goCreatorProfile = "Go to Creators profile";
+  static const queue = "Queue";
 }

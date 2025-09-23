@@ -35,10 +35,17 @@ class RisingArtistWidget extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 20),
                 child: Column(
                   children: [
-                    CircleAvatar(
-                      radius: 50,
-                      backgroundImage: AssetImage(
-                        AppImages.onBoardingCharacter1,
+                    Card(
+                      elevation: 6,
+                      margin: EdgeInsets.zero,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadiusGeometry.circular(100),
+                      ),
+                      child: CircleAvatar(
+                        radius: 50,
+                        backgroundImage: AssetImage(
+                          AppImages.onBoardingCharacter1,
+                        ),
                       ),
                     ),
                     SizedBox(height: 10),
@@ -46,7 +53,7 @@ class RisingArtistWidget extends StatelessWidget {
                       'Aurnab',
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
-                      color: AppColor.white_900,
+                      color: AppColors.white_900,
                     ),
                   ],
                 ),

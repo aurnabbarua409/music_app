@@ -57,19 +57,19 @@ class _CreateNewPlaylistScreenState extends State<CreateNewPlaylistScreen> {
                   SizedBox(height: 30),
                   TextFormField(
                     textAlign: TextAlign.center,
-                    cursorColor: AppColor.white_900,
+                    cursorColor: AppColors.white_900,
                     decoration: InputDecoration(
                       border: UnderlineInputBorder(
-                        borderSide: BorderSide(color: AppColor.white_900),
+                        borderSide: BorderSide(color: AppColors.white_900),
                       ),
                       focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: AppColor.white_900),
+                        borderSide: BorderSide(color: AppColors.white_900),
                       ),
                       hintText: AppStrings.myPlaylist,
                       hintStyle: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w400,
-                        color: AppColor.white_900,
+                        color: AppColors.white_900,
                       ),
                     ),
                   ),
@@ -87,7 +87,7 @@ class _CreateNewPlaylistScreenState extends State<CreateNewPlaylistScreen> {
                         child: ButtonWidget(
                           onTap: _controller.onCreate,
                           text: AppStrings.create,
-                          backgroundColor: AppColor.green_900,
+                          backgroundColor: AppColors.green_900,
                         ),
                       ),
                     ],

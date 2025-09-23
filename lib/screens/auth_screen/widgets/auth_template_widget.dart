@@ -35,7 +35,7 @@ class AuthTemplateWidget extends StatelessWidget {
                 margin: EdgeInsets.symmetric(horizontal: 20),
                 padding: EdgeInsets.all(30),
                 decoration: BoxDecoration(
-                  color: AppColor.grey_700,
+                  color: AppColors.grey_700,
                   borderRadius: BorderRadius.circular(24),
                 ),
                 child: SingleChildScrollView(

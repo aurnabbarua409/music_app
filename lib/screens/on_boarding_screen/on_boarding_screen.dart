@@ -49,7 +49,9 @@ class OnBoardingScreen extends StatelessWidget {
                         height: 8,
                         width: isActive ? 25 : 8, // wider when active
                         decoration: BoxDecoration(
-                          color: isActive ? AppColor.orange : AppColor.grey_60,
+                          color: isActive
+                              ? AppColors.orange
+                              : AppColors.grey_60,
                           borderRadius: BorderRadius.circular(6),
                         ),
                       ),

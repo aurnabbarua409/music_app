@@ -8,7 +8,6 @@ import 'package:music_app/screens/bottom_navbar_screen/widgets/bordered_icon_wid
 import 'package:music_app/screens/home_screen/home_screen.dart';
 import 'package:music_app/screens/playlist_screen/playlist_screen.dart';
 import 'package:music_app/utils/app_log.dart';
-import 'package:music_app/widgets/icon_widget.dart';
 import 'package:music_app/widgets/text_widget.dart';
 
 class BottomNavController extends GetxController {
@@ -16,7 +15,7 @@ class BottomNavController extends GetxController {
 
   final List<Widget> pages = [
     HomeScreen(),
-    PlaylistScreen(),
+    HomeScreen(),
     HomeScreen(),
     HomeScreen(),
     HomeScreen(),
@@ -33,7 +32,7 @@ class BottomNavController extends GetxController {
 
   void onCreateNew() {
     Get.bottomSheet(
-      backgroundColor: AppColor.black_700,
+      backgroundColor: AppColors.black_700,
       Padding(
         padding: const EdgeInsets.all(30.0),
         child: Column(
@@ -52,7 +51,7 @@ class BottomNavController extends GetxController {
                     AppStrings.createYourPlaylist,
                     fontSize: 18,
                     fontWeight: FontWeight.w700,
-                    color: AppColor.fadeWhite,
+                    color: AppColors.fadeWhite,
                   ),
                 ],
               ),
@@ -66,7 +65,7 @@ class BottomNavController extends GetxController {
                   AppStrings.uploadSong,
                   fontSize: 18,
                   fontWeight: FontWeight.w700,
-                  color: AppColor.fadeWhite,
+                  color: AppColors.fadeWhite,
                 ),
               ],
             ),

@@ -52,21 +52,21 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                     controller: _controller.otpController[index],
                     focusNode: _controller.focusNode[index],
                     autofocus: true,
-                    style: TextStyle(color: AppColor.white),
+                    style: TextStyle(color: AppColors.white),
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.all(0),
                       filled: true,
-                      fillColor: AppColor.black_800,
+                      fillColor: AppColors.black_800,
                       border: OutlineInputBorder(
-                        borderSide: BorderSide(color: AppColor.black_800),
+                        borderSide: BorderSide(color: AppColors.black_800),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: AppColor.black_800),
+                        borderSide: BorderSide(color: AppColors.black_800),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: AppColor.black_800),
+                        borderSide: BorderSide(color: AppColors.black_800),
                         borderRadius: BorderRadius.circular(20),
                       ),
                     ),

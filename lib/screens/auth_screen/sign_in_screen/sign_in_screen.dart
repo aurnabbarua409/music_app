@@ -73,7 +73,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 AppStrings.rememberMe,
                 fontSize: 12,
                 fontWeight: FontWeight.w400,
-                color: AppColor.white_900,
+                color: AppColors.white_900,
               ),
               Spacer(),
               ButtonWidget.text(
@@ -144,7 +144,7 @@ class _SignInScreenState extends State<SignInScreen> {
               AppStrings.orSignInWith,
               fontWeight: FontWeight.w400,
               fontSize: 12,
-              color: AppColor.white_900,
+              color: AppColors.white_900,
             ),
             SizedBox(width: 10),
             DividerWidget(reverse: true),
@@ -165,7 +165,7 @@ class _SignInScreenState extends State<SignInScreen> {
               AppStrings.dontHaveAccount,
               fontSize: 12,
               fontWeight: FontWeight.w400,
-              color: AppColor.white_900,
+              color: AppColors.white_900,
             ),
             SizedBox(width: 2),
             ButtonWidget.text(

@@ -38,7 +38,7 @@ class SignInController extends GetxController {
   }
 
   void onSignin() {
-    Get.toNamed(AppRoutes.bottomNavBarScreen);
+    Get.offAllNamed(AppRoutes.bottomNavBarScreen);
   }
 
   void onSignUp() {

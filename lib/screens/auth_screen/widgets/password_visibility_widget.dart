@@ -15,7 +15,7 @@ class PasswordVisibilityWidget extends StatelessWidget {
       onPressed: onChanged,
       icon: Icon(
         isVisible ? Icons.visibility_outlined : Icons.visibility_off_outlined,
-        color: AppColor.grey_60,
+        color: AppColors.grey_60,
       ),
     );
   }

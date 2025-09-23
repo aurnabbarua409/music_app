@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:music_app/constants/app_color.dart';
 import 'package:music_app/constants/app_strings.dart';
-import 'package:music_app/routes/app_routes.dart';
 import 'package:music_app/screens/auth_screen/reset_password_screen/controller/reset_password_controller.dart';
 import 'package:music_app/screens/auth_screen/widgets/auth_header_widget.dart';
 import 'package:music_app/screens/auth_screen/widgets/auth_template_widget.dart';
 import 'package:music_app/screens/auth_screen/widgets/password_visibility_widget.dart';
 import 'package:music_app/widgets/button_widget.dart';
-import 'package:music_app/widgets/glassEffectContainer.dart';
 import 'package:music_app/widgets/text_field_widget.dart';
 
 class ResetPasswordScreen extends StatefulWidget {

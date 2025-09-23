@@ -17,7 +17,7 @@ class CheckboxWidget extends StatelessWidget {
           height: 16,
           width: 16,
           child: Checkbox.adaptive(
-            activeColor: AppColor.orange,
+            activeColor: AppColors.orange,
             value: value,
             onChanged: (value) {
               onChanged();

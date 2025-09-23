@@ -11,4 +11,5 @@ class AppRoutes {
   static const bottomNavBarScreen = '/bottom_navbar_screen';
   static const createNewPlaylist = '/create_new_playlist_screen';
   static const playListScreen = '/play_list_screen';
+  static const nowPlayingScreen = '/now_playing_screen';
 }

@@ -5,58 +5,66 @@ import 'package:music_app/widgets/text_widget.dart';
 class TextFieldWidget extends StatelessWidget {
   const TextFieldWidget({
     super.key,
-    required this.label,
+    this.label,
     this.controller,
     this.hintText,
     this.suffixIcon,
+    this.backgroundColor,
     this.obscureText = false,
   });
-  final String label;
+  final String? label;
   final String? hintText;
   final Widget? suffixIcon;
   final bool obscureText;
+  final Color? backgroundColor;
   final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Align(
-            alignment: Alignment.centerLeft,
-            child: TextWidget(
-              label,
-              textAlign: TextAlign.left,
-              fontWeight: FontWeight.w400,
-              fontSize: 12,
-              color: AppColor.white_900,
+          if (label != null) ...[
+            Align(
+              alignment: Alignment.centerLeft,
+              child: TextWidget(
+                label!,
+                textAlign: TextAlign.left,
+                fontWeight: FontWeight.w400,
+                fontSize: 12,
+                color: AppColors.white_900,
+              ),
             ),
-          ),
-          SizedBox(height: 10),
+            SizedBox(height: 10),
+          ],
           SizedBox(
             height: 48,
             child: TextFormField(
               autofocus: true,
               obscureText: obscureText,
               controller: controller,
-              cursorColor: AppColor.grey_60,
-              style: TextStyle(color: AppColor.grey_60),
+              cursorColor: AppColors.grey_60,
+              style: TextStyle(
+                color: AppColors.grey_60,
+                backgroundColor: backgroundColor,
+              ),
               decoration: InputDecoration(
                 suffixIcon: suffixIcon,
                 hintText: hintText,
                 hintStyle: TextStyle(
-                  color: AppColor.grey_60,
+                  color: AppColors.grey_60,
                   fontWeight: FontWeight.w400,
                   fontSize: 14,
                 ),
-                focusColor: AppColor.grey_60,
-                fillColor: AppColor.grey_60,
+                focusColor: AppColors.grey_60,
+                fillColor: AppColors.grey_60,
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: AppColor.grey_60),
+                  borderSide: BorderSide(color: AppColors.grey_60),
                   borderRadius: BorderRadius.circular(25),
                 ),
                 border: OutlineInputBorder(
-                  borderSide: BorderSide(color: AppColor.grey_60),
+                  borderSide: BorderSide(color: AppColors.grey_60),
                   borderRadius: BorderRadius.circular(25),
                 ),
               ),

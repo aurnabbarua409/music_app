@@ -36,16 +36,24 @@ class LiveShowWidget extends StatelessWidget {
                 padding: const EdgeInsets.only(right: 16),
                 child: Column(
                   children: [
-                    DottedBorder(
-                      options: CircularDottedBorderOptions(
-                        color: AppColor.orange,
-                        strokeWidth: 2,
-                        dashPattern: [4, 4],
+                    Card(
+                      elevation: 6,
+                      margin: EdgeInsets.zero,
+                      color: Colors.transparent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadiusGeometry.circular(100),
                       ),
-                      child: CircleAvatar(
-                        radius: 50,
-                        backgroundImage: AssetImage(
-                          AppImages.onBoardingCharacter1,
+                      child: DottedBorder(
+                        options: CircularDottedBorderOptions(
+                          color: AppColors.orange,
+                          strokeWidth: 2,
+                          dashPattern: [4, 4],
+                        ),
+                        child: CircleAvatar(
+                          radius: 50,
+                          backgroundImage: AssetImage(
+                            AppImages.onBoardingCharacter1,
+                          ),
                         ),
                       ),
                     ),
@@ -54,7 +62,7 @@ class LiveShowWidget extends StatelessWidget {
                       'The weekend',
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
-                      color: AppColor.white_900,
+                      color: AppColors.white_900,
                     ),
                   ],
                 ),

@@ -54,7 +54,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 width: double.infinity,
                 padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: AppColor.grey_500,
+                  color: AppColors.grey_500,
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: Row(
@@ -65,13 +65,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         text: AppStrings.regularUser,
                         fontSize: 16,
                         height: 44,
+                        cardColor: Colors.transparent,
+                        elevation: !_controller.isArtist.value ? 6 : 0,
                         fontWeight: FontWeight.w600,
                         backgroundColor: _controller.isArtist.value
                             ? Colors.transparent
-                            : AppColor.grey_600,
+                            : AppColors.grey_600,
                         color: _controller.isArtist.value
-                            ? AppColor.white_900
-                            : AppColor.white,
+                            ? AppColors.white_900
+                            : AppColors.white,
                         borderColor: Colors.transparent,
                         onTap: () => _controller.onChooseUserType(false),
                       ),
@@ -82,13 +84,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         text: AppStrings.artist,
                         backgroundColor: !_controller.isArtist.value
                             ? Colors.transparent
-                            : AppColor.grey_600,
+                            : AppColors.grey_600,
                         fontSize: 16,
+                        cardColor: Colors.transparent,
+                        elevation: _controller.isArtist.value ? 6 : 0,
                         height: 44,
                         fontWeight: FontWeight.w600,
                         color: _controller.isArtist.value
-                            ? AppColor.white
-                            : AppColor.white_900,
+                            ? AppColors.white
+                            : AppColors.white_900,
                         borderColor: Colors.transparent,
                         onTap: () => _controller.onChooseUserType(true),
                       ),
@@ -149,7 +153,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               AppStrings.iAgreeToThe,
               fontSize: 12,
               fontWeight: FontWeight.w700,
-              color: AppColor.grey_60,
+              color: AppColors.grey_60,
             ),
             SizedBox(width: 3.5),
             ButtonWidget.text(
@@ -162,7 +166,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             TextWidget(
               AppStrings.and,
               fontSize: 12,
-              color: AppColor.grey_60,
+              color: AppColors.grey_60,
               fontWeight: FontWeight.w700,
             ),
             SizedBox(width: 3.5),
@@ -189,7 +193,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               AppStrings.orSignUpWith,
               fontWeight: FontWeight.w400,
               fontSize: 12,
-              color: AppColor.white_900,
+              color: AppColors.white_900,
             ),
             SizedBox(width: 10),
             DividerWidget(reverse: true),
@@ -211,7 +215,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               AppStrings.alreadyhaveAccount,
               fontSize: 12,
               fontWeight: FontWeight.w400,
-              color: AppColor.white_900,
+              color: AppColors.white_900,
             ),
             SizedBox(width: 2),
             ButtonWidget.text(

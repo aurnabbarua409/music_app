@@ -10,10 +10,10 @@ class BorderedIconWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: AppColor.grey_800,
+        color: AppColors.grey_800,
         shape: BoxShape.circle,
       ),
-      child: IconWidget(icon: icon, color: AppColor.white),
+      child: IconWidget(icon: icon, color: AppColors.white),
     );
   }
 }

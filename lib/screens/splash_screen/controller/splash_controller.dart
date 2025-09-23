@@ -9,7 +9,7 @@ class SplashController extends GetxController {
     super.onInit();
     appLog(title: 'Splash screen', descrition: 'initialized');
     Future.delayed(Duration(seconds: 3), () {
-      Get.toNamed(AppRoutes.onBoardingScreen);
+      Get.offAllNamed(AppRoutes.onBoardingScreen);
     });
   }
 

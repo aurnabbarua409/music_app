@@ -10,18 +10,21 @@ class TypeSelectorWidget extends StatelessWidget {
     required this.onChanged,
     required this.firstText,
     required this.lastText,
+    this.height,
   });
   final bool value;
   final String firstText;
   final String lastText;
+  final double? height;
   final void Function(bool value) onChanged;
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(8),
+      height: height,
+      padding: EdgeInsets.all(4),
       decoration: BoxDecoration(
-        color: AppColor.grey_500,
+        color: AppColors.grey_500,
         borderRadius: BorderRadius.circular(25),
       ),
       child: Row(
@@ -31,10 +34,11 @@ class TypeSelectorWidget extends StatelessWidget {
               enableGlassEffect: value,
               text: firstText,
               fontSize: 16,
-              height: 44,
+              cardColor: Colors.transparent,
+              elevation: value ? 6 : 0,
               fontWeight: FontWeight.w600,
-              backgroundColor: !value ? Colors.transparent : AppColor.grey_600,
-              color: !value ? AppColor.white_900 : AppColor.white,
+              backgroundColor: !value ? Colors.transparent : AppColors.grey_600,
+              color: !value ? AppColors.white_900 : AppColors.white,
               borderColor: Colors.transparent,
               onTap: () => onChanged(true),
             ),
@@ -43,11 +47,12 @@ class TypeSelectorWidget extends StatelessWidget {
             child: ButtonWidget(
               enableGlassEffect: !value,
               text: lastText,
-              backgroundColor: value ? Colors.transparent : AppColor.grey_600,
+              elevation: !value ? 6 : 0,
+              backgroundColor: value ? Colors.transparent : AppColors.grey_600,
               fontSize: 16,
-              height: 44,
+              cardColor: Colors.transparent,
               fontWeight: FontWeight.w600,
-              color: !value ? AppColor.white : AppColor.white_900,
+              color: !value ? AppColors.white : AppColors.white_900,
               borderColor: Colors.transparent,
               onTap: () => onChanged(false),
             ),

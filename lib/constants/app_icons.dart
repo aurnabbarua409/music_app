@@ -28,4 +28,11 @@ class AppIcons {
   static const shareIcon = "$_baseName/share_icon.png";
   static const musicPLayingIcon = "$_baseName/music_playing_icon.png";
   static const moreVertIcon = "$_baseName/more_vert_icon.png";
+  static const goForwardIcon = "$_baseName/go_forward_icon.png";
+  static const goPreviousIcon = "$_baseName/go_previous_icon.png";
+  static const playListIcon = "$_baseName/playlist_icon.png";
+  static const repeatIcon = "$_baseName/repeat_icon.png";
+  static const pauseIcon = "$_baseName/pause_icon.png";
+  static const commentIcon = "$_baseName/comment_icon.png";
+  static const sendIcon = "$_baseName/send_icon.png";
 }
