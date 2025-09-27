@@ -35,4 +35,15 @@ class AppIcons {
   static const pauseIcon = "$_baseName/pause_icon.png";
   static const commentIcon = "$_baseName/comment_icon.png";
   static const sendIcon = "$_baseName/send_icon.png";
+  static const securityIcon = "$_baseName/security_icon.png";
+  static const preferenceIcon = "$_baseName/preferences_icon.png";
+  static const logoutIcon = "$_baseName/Logout.png";
+  static const helpIcon = "$_baseName/help_icon.png";
+  static const bellIcon = "$_baseName/bell_icon.png";
+  static const lockIcon = "$_baseName/lock_icon.png";
+  static const trashIcon = "$_baseName/trash_icon.png";
+  static const warningIcon = "$_baseName/warning_icon.png";
+  static const infoIcon = "$_baseName/info_icon.png";
+  static const faqIcon = "$_baseName/faq_icon.png";
+  static const termIcon = "$_baseName/term_icon.png";
 }

@@ -11,12 +11,14 @@ class TextFieldWidget extends StatelessWidget {
     this.suffixIcon,
     this.backgroundColor,
     this.obscureText = false,
+    this.maxLines,
   });
   final String? label;
   final String? hintText;
   final Widget? suffixIcon;
   final bool obscureText;
   final Color? backgroundColor;
+  final int? maxLines;
   final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
@@ -39,7 +41,7 @@ class TextFieldWidget extends StatelessWidget {
             SizedBox(height: 10),
           ],
           SizedBox(
-            height: 48,
+            height: maxLines == null ? 48 : null,
             child: TextFormField(
               autofocus: true,
               obscureText: obscureText,
@@ -49,6 +51,7 @@ class TextFieldWidget extends StatelessWidget {
                 color: AppColors.grey_60,
                 backgroundColor: backgroundColor,
               ),
+              maxLines: maxLines,
               decoration: InputDecoration(
                 suffixIcon: suffixIcon,
                 hintText: hintText,

@@ -7,6 +7,7 @@ import 'package:music_app/routes/app_routes.dart';
 import 'package:music_app/screens/bottom_navbar_screen/widgets/bordered_icon_widget.dart';
 import 'package:music_app/screens/home_screen/home_screen.dart';
 import 'package:music_app/screens/playlist_screen/playlist_screen.dart';
+import 'package:music_app/screens/setting_screen/setting_screen.dart';
 import 'package:music_app/utils/app_log.dart';
 import 'package:music_app/widgets/text_widget.dart';
 
@@ -18,7 +19,7 @@ class BottomNavController extends GetxController {
     HomeScreen(),
     HomeScreen(),
     HomeScreen(),
-    HomeScreen(),
+    SettingScreen(),
   ];
 
   void onNavItemTapped(int index) {

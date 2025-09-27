@@ -1,11 +1,12 @@
 import 'dart:math';
 
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:music_app/constants/app_images.dart';
 import 'package:music_app/models/top_playlist_model.dart';
-import 'package:roulette/roulette.dart';
 
-class HomeController extends GetxController {
+
+class HomeController extends GetxController with GetTickerProviderStateMixin {
   final topPlayList = <TopPlaylistModel>[].obs;
 
   final List slotMachineItem = [
@@ -14,8 +15,9 @@ class HomeController extends GetxController {
     "assets/images/bell.png",
   ];
   List slotMachineTarget = [0, 0, 0].obs;
-  final rouletteController = RouletteController();
+  // final rouletteController = RouletteController();
 
+  late AnimationController rotationController;
   @override
   void onInit() {
     // TODO: implement onInit
@@ -24,6 +26,11 @@ class HomeController extends GetxController {
   }
 
   void onInitial() {
+    rotationController = AnimationController(
+      vsync: this,
+      animationBehavior: AnimationBehavior.normal,
+      duration: const Duration(milliseconds: 500),
+    );
     topPlayList.value = [
       TopPlaylistModel(
         title: 'Winter vibe 2025',
@@ -67,6 +74,9 @@ class HomeController extends GetxController {
   }
 
   void onSpinRoulette() {
-    rouletteController.rollTo(1);
+    rotationController.repeat();
+    Future.delayed(Duration(seconds: 3), () {
+      rotationController.stop();
+    });
   }
 }

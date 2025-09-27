@@ -42,7 +42,9 @@ dependencies:
   flutter_launcher_icons: ^0.14.4 
   audioplayers: ^6.5.1
   slot_machine_roller: ^1.0.1
-  roulette: ^0.2.0
+  flutter_widget_from_html: ^0.17.1
+
+
  
 
 

@@ -12,4 +12,14 @@ class AppRoutes {
   static const createNewPlaylist = '/create_new_playlist_screen';
   static const playListScreen = '/play_list_screen';
   static const nowPlayingScreen = '/now_playing_screen';
+  static const notificationSettingScreen = "/notification_setting_screen";
+  static const passwordSecurityScreen = "/password_security_screen";
+  static const changePasswordSceen = "/change_password_screen";
+  static const deleteAccountSceen = "/delete_account_screen";
+  static const helpSupportScreen = "/help_support_screen";
+  static const aboutAppScreen = "/about_app_screen";
+  static const faqScreen = "/faq_screen";
+  static const termConditionScreen = "/term_condition_screen";
+  static const privacyPolicyScreen = "/privacy_policy_screen";
+  static const contactUsScreen = "/contact_us_screen";
 }

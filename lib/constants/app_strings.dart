@@ -104,4 +104,22 @@ class AppStrings {
   static const addYourPlaylist = "Add to your Playlist";
   static const goCreatorProfile = "Go to Creators profile";
   static const queue = "Queue";
+
+  // ============= Setting Screen =========================
+  static const notifications = "Notifications";
+  static const preferences = "Preferences";
+  static const blockedMember = "Blocked Member";
+  static const passwordSecurity = "Password & Security";
+  static const helpSupport = "Help & Support";
+  static const logout = "Logout";
+  static const setting = "Settings";
+  static const changePassword = "Change Password";
+  static const deleteAccount = "Delete Account";
+  static const update = "Update";
+
+  // help and support
+  static const aboutApp = "About this app";
+  static const faq = "FAQ";
+  static const termCondition = "Term & Conditions";
+  static const contactUs = "Contact us";
 }
