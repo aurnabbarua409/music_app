@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:music_app/constants/app_images.dart';
 import 'package:music_app/models/top_playlist_model.dart';
-
+import 'package:music_app/routes/app_routes.dart';
+import 'package:music_app/utils/app_common_function.dart';
 
 class HomeController extends GetxController with GetTickerProviderStateMixin {
   final topPlayList = <TopPlaylistModel>[].obs;
@@ -60,23 +61,39 @@ class HomeController extends GetxController with GetTickerProviderStateMixin {
   }
 
   void onSpinSlotMachine() {
-    slotMachineTarget = [null, null, null];
-    update();
-    final random = Random();
-    Future.delayed(Duration(seconds: 5), () {
-      slotMachineTarget = [
-        random.nextInt(slotMachineItem.length - 1),
-        random.nextInt(slotMachineItem.length - 1),
-        random.nextInt(slotMachineItem.length - 1),
-      ];
-      update();
-    });
+    AppCommonFunction.showSnackbar(
+      title: "Under Development!!!",
+      text: "Please wait for the next update",
+      isSuccess: false,
+    );
+    // slotMachineTarget = [null, null, null];
+
+    // update();
+    // final random = Random();
+    // Future.delayed(Duration(seconds: 5), () {
+    //   slotMachineTarget = [
+    //     random.nextInt(slotMachineItem.length - 1),
+    //     random.nextInt(slotMachineItem.length - 1),
+    //     random.nextInt(slotMachineItem.length - 1),
+    //   ];
+
+    //   update();
+    // });
   }
 
   void onSpinRoulette() {
+    AppCommonFunction.showSnackbar(
+      title: "We're still working on this!!",
+      text: "Please wait for the next update",
+      isSuccess: false,
+    );
     rotationController.repeat();
     Future.delayed(Duration(seconds: 3), () {
       rotationController.stop();
     });
+  }
+
+  void onClickNotification() {
+    Get.toNamed(AppRoutes.notificationScreen);
   }
 }

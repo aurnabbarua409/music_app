@@ -1,77 +1,76 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:music_app/constants/app_color.dart';
-import 'package:music_app/constants/app_icons.dart';
 import 'package:music_app/constants/app_strings.dart';
-import 'package:music_app/routes/app_routes.dart';
-import 'package:music_app/screens/help_support_screen/widget/help_support_item.dart';
+import 'package:music_app/widgets/appbar_widget.dart';
+import 'package:music_app/widgets/button_widget.dart';
+import 'package:music_app/widgets/text_field_widget.dart';
+import 'package:music_app/widgets/text_widget.dart';
 
 class HelpSupportScreen extends StatelessWidget {
   const HelpSupportScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.black_700,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        foregroundColor: AppColors.white,
-        centerTitle: true,
-        title: Text(AppStrings.helpSupport),
-      ),
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-            child: HelpSupportItem(
-              ontap: () {
-                Get.toNamed(AppRoutes.aboutAppScreen);
-              },
-              icon: AppIcons.infoIcon,
-              text: AppStrings.aboutApp,
+    return AppbarWidget(
+      title: AppStrings.helpSupport,
+      body: Padding(
+        padding: EdgeInsets.only(left: 20, right: 20, top: 20),
+        child: Column(
+          children: [
+            TextWidget(
+              "Have a question or need assistance? Reach out to our support team, and we’ll get back to you as soon as possible.",
+              color: AppColors.grey_300,
+              textAlign: TextAlign.left,
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-            child: HelpSupportItem(
-              ontap: () {
-                Get.toNamed(AppRoutes.faqScreen);
-              },
-              icon: AppIcons.faqIcon,
-              text: AppStrings.faq,
+            SizedBox(height: 20),
+            TextFieldWidget(
+              label: "Name",
+              hintText: "Enter your name",
+              labelFontSize: 16,
+              labelFontweight: FontWeight.w700,
+              labelColor: AppColors.white,
+              borderRadius: 12,
+              borderWidth: 0.2,
+              contentPadding: EdgeInsets.symmetric(horizontal: 10),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-            child: HelpSupportItem(
-              ontap: () {
-                Get.toNamed(AppRoutes.termConditionScreen);
-              },
-              icon: AppIcons.termIcon,
-              text: AppStrings.termCondition,
+            TextFieldWidget(
+              label: AppStrings.email,
+              hintText: "Enter your email",
+              labelFontSize: 16,
+              labelFontweight: FontWeight.w700,
+              labelColor: AppColors.white,
+              borderRadius: 12,
+              borderWidth: 0.2,
+              contentPadding: EdgeInsets.symmetric(horizontal: 10),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-            child: HelpSupportItem(
-              ontap: () {
-                Get.toNamed(AppRoutes.privacyPolicyScreen);
-              },
-              icon: AppIcons.termIcon,
-              text: AppStrings.privacyPolicy,
+            TextFieldWidget(
+              label: "Subject",
+              hintText: "What's your inquiry about?",
+              labelFontSize: 16,
+              labelFontweight: FontWeight.w700,
+              labelColor: AppColors.white,
+              borderRadius: 12,
+              borderWidth: 0.2,
+              contentPadding: EdgeInsets.symmetric(horizontal: 10),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-            child: HelpSupportItem(
-              ontap: () {
-                Get.toNamed(AppRoutes.contactUsScreen);
-              },
-              icon: AppIcons.termIcon,
-              text: AppStrings.contactUs,
+            TextFieldWidget(
+              label: "Message",
+              maxLines: 5,
+              hintText: "Tell us how we can assisi you",
+              labelFontSize: 16,
+              labelFontweight: FontWeight.w700,
+              labelColor: AppColors.white,
+              borderRadius: 12,
+              borderWidth: 0.2,
+              contentPadding: EdgeInsets.symmetric(
+                horizontal: 10,
+                vertical: 5,
+              ),
             ),
-          ),
-        ],
+            Spacer(),
+            ButtonWidget(onTap: () {}, text: "Send"),
+          ],
+        ),
       ),
     );
   }

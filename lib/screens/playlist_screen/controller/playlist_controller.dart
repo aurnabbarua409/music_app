@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:music_app/constants/app_color.dart';
@@ -14,28 +13,42 @@ import 'package:music_app/widgets/text_widget.dart';
 
 class PlaylistController extends GetxController {
   final isSongs = true.obs;
-  final selectedType = "".obs;
-  late TextEditingController commentController;
+  final commentController = TextEditingController();
+  var featureArtist = <Map<String, bool>>[].obs;
 
-  void onInitial() {
-    commentController = TextEditingController();
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    featureArtist.value = [
+      {"Eminuem": false},
+      {"Bob Marley": false},
+      {"Eminuem": false},
+      {"Bob Marley": false},
+    ];
   }
 
-  void onDispose() {
+  void onSelectFeaturedArtist(int index) {
+    final key = featureArtist[index].keys.first;
+    featureArtist[index][key] = !featureArtist[index][key]!;
+    update();
+  }
+
+  @override
+  void onClose() {
+    // TODO: implement onClose
+    super.onClose();
     commentController.dispose();
   }
 
   void onChangedIsSongs(bool value) {
     isSongs.value = value;
-    if (value) {
-      selectedType.value = "Songs";
-    } else {
-      selectedType.value = "Info";
-    }
+
     appLog(
       title: 'After selecting playlist type',
-      descrition: "Selected type: ${selectedType.value}",
+      descrition: "Selected type: ${isSongs.value}",
     );
+    update();
   }
 
   void onGoBack() {

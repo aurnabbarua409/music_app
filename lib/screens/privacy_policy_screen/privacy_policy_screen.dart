@@ -4,20 +4,15 @@ import 'package:get/get.dart';
 import 'package:music_app/constants/app_color.dart';
 import 'package:music_app/constants/app_strings.dart';
 import 'package:music_app/screens/privacy_policy_screen/controller/privacy_policy_controller.dart';
+import 'package:music_app/widgets/appbar_widget.dart';
 
 class PrivacyPolicyScreen extends StatelessWidget {
   const PrivacyPolicyScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.black_700,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        foregroundColor: AppColors.white,
-        centerTitle: true,
-        title: Text(AppStrings.privacyPolicy),
-      ),
+    return AppbarWidget(
+      title: AppStrings.privacyPolicy,
 
       body: GetBuilder(
         init: PrivacyPolicyController(),

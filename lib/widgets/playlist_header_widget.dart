@@ -8,8 +8,29 @@ import 'package:music_app/widgets/image_widget.dart';
 import 'package:music_app/widgets/text_widget.dart';
 
 class PlaylistHeaderWidget extends StatelessWidget {
-  const PlaylistHeaderWidget({super.key});
-
+  const PlaylistHeaderWidget({
+    super.key,
+    required this.playlistName,
+    required this.numberOfSong,
+    required this.duration,
+    required this.viewer,
+    required this.owner,
+    required this.image,
+    this.imageHeight,
+    this.imageWidth,
+    this.fit = BoxFit.cover,
+    this.gradient,
+  });
+  final String playlistName;
+  final String numberOfSong;
+  final String duration;
+  final String viewer;
+  final String owner;
+  final String image;
+  final double? imageHeight;
+  final double? imageWidth;
+  final BoxFit? fit;
+  final Gradient? gradient;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -20,8 +41,10 @@ class PlaylistHeaderWidget extends StatelessWidget {
             height: 240,
             width: double.infinity,
             child: ImageWidget(
-              image: AppImages.onBoardingCharacter1,
-              fit: BoxFit.cover,
+              image: image,
+              width: imageWidth,
+              height: imageHeight,
+              fit: fit,
             ),
           ),
         ),
@@ -29,16 +52,19 @@ class PlaylistHeaderWidget extends StatelessWidget {
           height: 240,
           width: double.infinity,
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.transparent, AppColors.black],
-              begin: Alignment.center,
-              end: Alignment.bottomCenter,
-            ),
+            borderRadius: BorderRadius.circular(15),
+            gradient:
+                gradient ??
+                LinearGradient(
+                  colors: [Colors.transparent, AppColors.black],
+                  begin: Alignment.center,
+                  end: Alignment.bottomCenter,
+                ),
           ),
         ),
 
         Container(
-          padding: EdgeInsets.all(10),
+          padding: EdgeInsets.all(15),
           width: double.infinity,
           height: 240,
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
@@ -52,26 +78,26 @@ class PlaylistHeaderWidget extends StatelessWidget {
                 onTap: () {},
               ),
               SizedBox(height: 5),
-              TextWidget('Summer vibes 2025'),
+              TextWidget(playlistName),
               SizedBox(height: 4),
               Row(
                 children: [
                   IconWidget(icon: AppIcons.musicIconOutline),
                   TextWidget(
-                    '8 Songs',
+                    '$numberOfSong Songs',
                     color: AppColors.white_900,
                     fontSize: 12,
                   ),
                   SizedBox(width: 5),
                   IconWidget(icon: AppIcons.timerIcon),
                   TextWidget(
-                    '1h 30m',
+                    duration,
                     color: AppColors.white_900,
                     fontSize: 12,
                   ),
                   SizedBox(width: 5),
                   IconWidget(icon: AppIcons.playIconOutline),
-                  TextWidget('12.5K', color: AppColors.white_900, fontSize: 12),
+                  TextWidget(viewer, color: AppColors.white_900, fontSize: 12),
                 ],
               ),
               SizedBox(height: 5),
@@ -83,15 +109,11 @@ class PlaylistHeaderWidget extends StatelessWidget {
                     color: AppColors.white_900,
                   ),
                   SizedBox(width: 4),
-                  TextWidget(
-                    'Aurnab',
-                    fontWeight: FontWeight.w700,
-                    fontSize: 12,
-                  ),
-                  Spacer(),
-                  IconWidget(icon: AppIcons.downloadIcon),
-                  SizedBox(width: 5),
-                  IconWidget(icon: AppIcons.shareIcon),
+                  TextWidget(owner, fontWeight: FontWeight.w700, fontSize: 12),
+                  // Spacer(),
+                  // IconWidget(icon: AppIcons.downloadIcon),
+                  // SizedBox(width: 5),
+                  // IconWidget(icon: AppIcons.shareIcon),
                 ],
               ),
             ],

@@ -6,8 +6,8 @@ import 'package:music_app/constants/app_images.dart';
 import 'package:music_app/constants/app_strings.dart';
 import 'package:music_app/routes/app_routes.dart';
 import 'package:music_app/screens/setting_screen/widget/setting_item.dart';
+import 'package:music_app/widgets/appbar_widget.dart';
 import 'package:music_app/widgets/button_widget.dart';
-import 'package:music_app/widgets/icon_widget.dart';
 import 'package:music_app/widgets/image_widget.dart';
 import 'package:music_app/widgets/text_widget.dart';
 
@@ -16,20 +16,8 @@ class SettingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.black_700,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        centerTitle: true,
-        title: Text(
-          AppStrings.setting,
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-            color: AppColors.white,
-          ),
-        ),
-      ),
+    return AppbarWidget(
+      title: AppStrings.setting,    
       body: Column(
         children: [
           Padding(
@@ -86,30 +74,59 @@ class SettingScreen extends StatelessWidget {
               icon: AppIcons.logoutIcon,
               textColor: AppColors.red_500,
               ontap: () {
-                showBottomSheet(
-                  context: context,
-                  builder: (context) {
-                    return Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        ImageWidget(image: AppImages.logoutNote),
-                        TextWidget(
-                          "Are you Sure you Want to Log Out?",
-                          fontSize: 24,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.white,
-                        ),
-                        TextWidget(
-                          "By logging out, you will be ending your current session and will no longer have access to your account.",
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.grey_300,
-                        ),
-                        ButtonWidget(onTap: () {}, text: AppStrings.logout),
-                        ButtonWidget(onTap: () {}, text: "Cancel"),
-                      ],
-                    );
-                  },
+                Get.bottomSheet(
+                  backgroundColor: AppColors.black_700,
+                  SafeArea(
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        top: 20,
+                        left: 20,
+                        right: 20,
+                      ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          ImageWidget(
+                            image: AppImages.logoutNote,
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.contain,
+                          ),
+                          SizedBox(height: 10),
+                          TextWidget(
+                            "Are you Sure you Want to Log Out?",
+                            fontSize: 24,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.white,
+                          ),
+                          SizedBox(height: 10),
+                          TextWidget(
+                            "By logging out, you will be ending your current session and will no longer have access to your account.",
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.grey_300,
+                          ),
+                          SizedBox(height: 10),
+                          ButtonWidget(
+                            onTap: () {
+                              Get.offAllNamed(AppRoutes.signInScreen);
+                            },
+                            text: AppStrings.logout,
+                          ),
+                          ButtonWidget(
+                            onTap: () {
+                              Get.back();
+                            },
+                            text: "Cancel",
+                            backgroundColor: AppColors.black,
+                            cardColor: Colors.transparent,
+                            enableGlassEffect: false,
+                            borderColor: AppColors.white,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 );
               },
             ),

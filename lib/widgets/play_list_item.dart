@@ -8,9 +8,25 @@ import 'package:music_app/widgets/image_widget.dart';
 import 'package:music_app/widgets/text_widget.dart';
 
 class PlayListItem extends StatelessWidget {
-  const PlayListItem({super.key, required this.isPlaying, this.ontap});
+  const PlayListItem({
+    super.key,
+    required this.isPlaying,
+    this.ontap,
+    required this.title,
+    required this.subtitle,
+    required this.image,
+    this.showMore = true,
+    this.backgroundColor,
+    this.borderColor = Colors.transparent,
+  });
   final bool isPlaying;
   final void Function()? ontap;
+  final String title;
+  final String subtitle;
+  final String image;
+  final bool showMore;
+  final Color? backgroundColor;
+  final Color borderColor;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -21,6 +37,7 @@ class PlayListItem extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 7),
         child: Card(
           elevation: 6,
+          color: backgroundColor,
           margin: EdgeInsets.zero,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusGeometry.circular(15),
@@ -29,9 +46,12 @@ class PlayListItem extends StatelessWidget {
               Container(
                 // margin: EdgeInsets.symmetric(vertical: 7),
                 decoration: BoxDecoration(
-                  color: isPlaying ? AppColors.black_900 : AppColors.black,
+                  color:
+                      backgroundColor ??
+                      (isPlaying ? AppColors.black_900 : AppColors.black),
                   // border: Border.all(color: AppColors.grey_60, width: 0.2),
                   borderRadius: BorderRadius.circular(15),
+                  border: Border.all(color: borderColor, width: 0.3),
                 ),
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 height: 52,
@@ -50,13 +70,13 @@ class PlayListItem extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         TextWidget(
-                          'Young',
+                          title,
                           color: AppColors.orange,
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
                         ),
                         TextWidget(
-                          'The Chainsmoker',
+                          subtitle,
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
                           color: AppColors.white_900,
@@ -77,16 +97,18 @@ class PlayListItem extends StatelessWidget {
                       height: 13.33,
                       onTap: () {},
                     ),
-                    SizedBox(width: 10),
-                    IconButtonWidget(
-                      icon: AppIcons.moreVertIcon,
-                      height: 16,
-                      onTap: () {},
-                    ),
+                    if (showMore) ...[
+                      SizedBox(width: 10),
+                      IconButtonWidget(
+                        icon: AppIcons.moreVertIcon,
+                        height: 16,
+                        onTap: () {},
+                      ),
+                    ],
                   ],
                 ),
               ).asGlass(
-                tintColor: AppColors.white,
+                tintColor: backgroundColor ?? AppColors.white,
                 clipBorderRadius: BorderRadius.circular(15),
               ),
         ),

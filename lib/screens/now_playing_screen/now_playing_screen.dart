@@ -4,7 +4,7 @@ import 'package:music_app/constants/app_color.dart';
 import 'package:music_app/constants/app_icons.dart';
 import 'package:music_app/constants/app_images.dart';
 import 'package:music_app/constants/app_strings.dart';
-import 'package:music_app/screens/now_playing_screen/controller/now_playing_constructor.dart';
+import 'package:music_app/screens/now_playing_screen/controller/now_playing_constroller.dart';
 import 'package:music_app/widgets/app_background_widget.dart';
 import 'package:music_app/widgets/button_widget.dart';
 import 'package:music_app/widgets/text_widget.dart';

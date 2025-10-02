@@ -46,4 +46,15 @@ class AppIcons {
   static const infoIcon = "$_baseName/info_icon.png";
   static const faqIcon = "$_baseName/faq_icon.png";
   static const termIcon = "$_baseName/term_icon.png";
+  static const moreCircleIcon = "$_baseName/more_circle_icon.png";
+  static const infoIcon2 = "$_baseName/info_icon (2).png";
+  static const songIcon = "$_baseName/song_icon.png";
+  static const addPeopleIcon = "$_baseName/add_people_icon.png";
+  static const saveIcon = "$_baseName/save_icon.png";
+  static const editProfileIcon = "$_baseName/edit_profile_icon.png";
+  static const supportIcon = "$_baseName/support_icon.png";
+  static const cameraIcon = "$_baseName/camera_icon.png";
+  static const userIcon = "$_baseName/user_icon.png";
+  static const emailIcon = "$_baseName/email_icon.png";
+  static const musicIcon4 = "$_baseName/music_icon4.png";
 }

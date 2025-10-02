@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:music_app/constants/app_color.dart';
+import 'package:music_app/constants/app_icons.dart';
 import 'package:music_app/constants/app_strings.dart';
 import 'package:music_app/screens/change_password_screen/controller/change_password_controller.dart';
+import 'package:music_app/widgets/appbar_widget.dart';
 import 'package:music_app/widgets/button_widget.dart';
+import 'package:music_app/widgets/icon_widget.dart';
 import 'package:music_app/widgets/text_field_widget.dart';
 
 class ChangePasswordScreen extends StatelessWidget {
@@ -11,14 +14,8 @@ class ChangePasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.black_700,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        foregroundColor: AppColors.white,
-        centerTitle: true,
-        title: Text(AppStrings.changePassword),
-      ),
+    return AppbarWidget(
+      title: AppStrings.changePassword,
       body: GetBuilder(
         init: ChangePasswordController(),
         builder: (controller) {
@@ -29,6 +26,14 @@ class ChangePasswordScreen extends StatelessWidget {
                 TextFieldWidget(
                   label: 'Current Password',
                   backgroundColor: AppColors.black,
+                  labelFontSize: 16,
+                  labelFontweight: FontWeight.w700,
+                  labelColor: AppColors.white,
+                  hintText: "Enter your password",
+                  prefixIcon: IconWidget(icon: AppIcons.lockIcon),
+                  borderRadius: 12,
+                  borderWidth: 0.2,
+                  contentPadding: EdgeInsets.all(0),
                   obscureText: controller.showCurrentPassword.value,
                   suffixIcon: IconButton(
                     onPressed: controller.onCurrentPassword,
@@ -44,6 +49,14 @@ class ChangePasswordScreen extends StatelessWidget {
                   label: 'New Password',
                   backgroundColor: AppColors.black,
                   obscureText: controller.showNewPassword.value,
+                  labelFontSize: 16,
+                  labelFontweight: FontWeight.w700,
+                  labelColor: AppColors.white,
+                  hintText: "Enter your new password",
+                  prefixIcon: IconWidget(icon: AppIcons.lockIcon),
+                  borderRadius: 12,
+                  borderWidth: 0.2,
+                  contentPadding: EdgeInsets.all(0),
                   suffixIcon: IconButton(
                     onPressed: controller.onNewPAssword,
                     color: AppColors.grey_300,
@@ -57,6 +70,14 @@ class ChangePasswordScreen extends StatelessWidget {
                 TextFieldWidget(
                   label: 'Confirm Password',
                   backgroundColor: AppColors.black,
+                  labelFontSize: 16,
+                  labelFontweight: FontWeight.w700,
+                  labelColor: AppColors.white,
+                  hintText: "Re-enter your new password",
+                  prefixIcon: IconWidget(icon: AppIcons.lockIcon),
+                  borderRadius: 12,
+                  borderWidth: 0.2,
+                  contentPadding: EdgeInsets.all(0),
                   obscureText: controller.showConfirmPassword.value,
                   suffixIcon: IconButton(
                     onPressed: controller.onConfirmPassword,
@@ -68,8 +89,8 @@ class ChangePasswordScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
-                ButtonWidget(onTap: () {}, text: AppStrings.update),
+                Spacer(),
+                ButtonWidget(onTap: () {}, text: AppStrings.saveChange),
               ],
             ),
           );

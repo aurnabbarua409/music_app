@@ -10,12 +10,14 @@ class TypeSelectorWidget extends StatelessWidget {
     required this.onChanged,
     required this.firstText,
     required this.lastText,
-    this.height,
+    this.height, required this.firstIcon, required this.lastIcon,
   });
   final bool value;
   final String firstText;
   final String lastText;
   final double? height;
+  final String firstIcon;
+  final String lastIcon;
   final void Function(bool value) onChanged;
   @override
   Widget build(BuildContext context) {
@@ -33,10 +35,13 @@ class TypeSelectorWidget extends StatelessWidget {
             child: ButtonWidget(
               enableGlassEffect: value,
               text: firstText,
+              icon: firstIcon,
+              iconPosition: IconPosition.beforeText,
               fontSize: 16,
               cardColor: Colors.transparent,
               elevation: value ? 6 : 0,
               fontWeight: FontWeight.w600,
+              iconColor:  !value ? AppColors.white_900 : AppColors.white,
               backgroundColor: !value ? Colors.transparent : AppColors.grey_600,
               color: !value ? AppColors.white_900 : AppColors.white,
               borderColor: Colors.transparent,
@@ -48,10 +53,13 @@ class TypeSelectorWidget extends StatelessWidget {
               enableGlassEffect: !value,
               text: lastText,
               elevation: !value ? 6 : 0,
+              icon: lastIcon,
+              iconPosition: IconPosition.beforeText,
               backgroundColor: value ? Colors.transparent : AppColors.grey_600,
               fontSize: 16,
               cardColor: Colors.transparent,
               fontWeight: FontWeight.w600,
+              iconColor:  !value ? AppColors.white : AppColors.white_900,
               color: !value ? AppColors.white : AppColors.white_900,
               borderColor: Colors.transparent,
               onTap: () => onChanged(false),

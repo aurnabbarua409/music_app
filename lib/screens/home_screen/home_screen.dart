@@ -16,14 +16,9 @@ import 'package:music_app/widgets/button_widget.dart';
 import 'package:music_app/widgets/icon_widget.dart';
 import 'package:music_app/widgets/text_widget.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return AppBackgroundWidget(
@@ -88,7 +83,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         ButtonWidget.icon(
                           icon: AppIcons.notificationIcon,
                           enableGlassEffect: true,
-                          onTap: () {},
+                          color: AppColors.orange,
+                          cardColor: Colors.transparent,
+                          backgroundColor: Colors.transparent,
+                          onTap: controller.onClickNotification,
                         ),
                         Container(
                           width: 10,

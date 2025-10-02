@@ -71,6 +71,7 @@ class OnBoardingScreen extends StatelessWidget {
                 child: TextWidget(
                   AppStrings.onBoardingScreenDetails,
                   fontWeight: FontWeight.w400,
+                  color: AppColors.white_900,
                 ),
               ),
               SizedBox(height: 30),

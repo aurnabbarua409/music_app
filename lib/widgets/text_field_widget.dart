@@ -9,9 +9,17 @@ class TextFieldWidget extends StatelessWidget {
     this.controller,
     this.hintText,
     this.suffixIcon,
-    this.backgroundColor,
+    this.backgroundColor = Colors.transparent,
     this.obscureText = false,
-    this.maxLines,
+    this.maxLines = 1,
+    this.labelFontSize = 12,
+    this.labelColor = AppColors.white_900,
+    this.labelFontweight = FontWeight.w400,
+    this.prefixIcon,
+    this.borderRadius = 25,
+    this.borderWidth = 1,
+    this.contentPadding,
+    this.margin,
   });
   final String? label;
   final String? hintText;
@@ -20,10 +28,19 @@ class TextFieldWidget extends StatelessWidget {
   final Color? backgroundColor;
   final int? maxLines;
   final TextEditingController? controller;
+
+  final double labelFontSize;
+  final FontWeight labelFontweight;
+  final Color labelColor;
+  final Widget? prefixIcon;
+  final double borderRadius;
+  final double borderWidth;
+  final EdgeInsets? contentPadding;
+  final EdgeInsets? margin;
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: margin ?? EdgeInsets.symmetric(vertical: 10),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -33,9 +50,9 @@ class TextFieldWidget extends StatelessWidget {
               child: TextWidget(
                 label!,
                 textAlign: TextAlign.left,
-                fontWeight: FontWeight.w400,
-                fontSize: 12,
-                color: AppColors.white_900,
+                fontWeight: labelFontweight,
+                fontSize: labelFontSize,
+                color: labelColor,
               ),
             ),
             SizedBox(height: 10),
@@ -54,7 +71,9 @@ class TextFieldWidget extends StatelessWidget {
               maxLines: maxLines,
               decoration: InputDecoration(
                 suffixIcon: suffixIcon,
+                prefixIcon: prefixIcon,
                 hintText: hintText,
+                contentPadding: contentPadding,
                 hintStyle: TextStyle(
                   color: AppColors.grey_60,
                   fontWeight: FontWeight.w400,
@@ -63,12 +82,18 @@ class TextFieldWidget extends StatelessWidget {
                 focusColor: AppColors.grey_60,
                 fillColor: AppColors.grey_60,
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: AppColors.grey_60),
-                  borderRadius: BorderRadius.circular(25),
+                  borderSide: BorderSide(
+                    color: AppColors.grey_60,
+                    width: borderWidth,
+                  ),
+                  borderRadius: BorderRadius.circular(borderRadius),
                 ),
                 border: OutlineInputBorder(
-                  borderSide: BorderSide(color: AppColors.grey_60),
-                  borderRadius: BorderRadius.circular(25),
+                  borderSide: BorderSide(
+                    color: AppColors.grey_60,
+                    width: borderWidth,
+                  ),
+                  borderRadius: BorderRadius.circular(borderRadius),
                 ),
               ),
             ),

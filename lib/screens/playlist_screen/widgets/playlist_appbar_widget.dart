@@ -23,7 +23,12 @@ class PlaylistAppbarWidget extends StatelessWidget {
             fontWeight: FontWeight.w700,
           ),
         ),
-        ButtonWidget.icon(icon: AppIcons.loveIcon, onTap: () {}),
+        ButtonWidget.icon(
+          icon: AppIcons.loveIcon,
+          backgroundColor: Colors.transparent,
+          cardColor: Colors.transparent,
+          onTap: () {},
+        ),
       ],
     );
   }

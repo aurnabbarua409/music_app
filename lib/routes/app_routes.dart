@@ -22,4 +22,9 @@ class AppRoutes {
   static const termConditionScreen = "/term_condition_screen";
   static const privacyPolicyScreen = "/privacy_policy_screen";
   static const contactUsScreen = "/contact_us_screen";
+  static const notificationScreen = "/notification_screen";
+  static const newPlaylistScreen = "/new_playlist_screen";
+  static const profileScreen = "/profile_screen";
+  static const editProfileScreen = "/edit_profile_screen";
+  static const addThisPlaylistScreen = "/add_this_playlist_screen";
 }

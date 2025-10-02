@@ -11,18 +11,22 @@ class BottomNavbarScreen extends StatefulWidget {
 }
 
 class _BottomNavbarScreenState extends State<BottomNavbarScreen> {
-  final _controller = Get.put(BottomNavController());
+ 
 
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => Scaffold(
-        body: _controller.pages[_controller.selectedIndex.value],
-        bottomNavigationBar: CustomBottomNavBar(
-          selectedIndex: _controller.selectedIndex.value,
-          onItemSelected: (value) => _controller.onNavItemTapped(value),
-        ),
-      ),
+    return GetBuilder(
+      init: BottomNavController(),
+      builder: (controller) {
+        return Scaffold(
+          backgroundColor: Colors.transparent,
+          body: controller.pages[controller.selectedIndex.value],
+          bottomNavigationBar: CustomBottomNavBar(
+            selectedIndex: controller.selectedIndex.value,
+            onItemSelected: (value) => controller.onNavItemTapped(value),
+          ),
+        );
+      }
     );
   }
 }

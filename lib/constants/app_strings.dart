@@ -97,6 +97,7 @@ class AppStrings {
   static const songs = "Songs";
   static const info = "Info";
   static const writeComment = "Write a comment";
+  static const follow = "Follow";
 
   // Now playing screen
   static const nowPlaying = "Now Playing";
@@ -122,4 +123,16 @@ class AppStrings {
   static const faq = "FAQ";
   static const termCondition = "Term & Conditions";
   static const contactUs = "Contact us";
+
+  // Profile Screen
+  static const profile = "Profile";
+  static const followers = "Followers";
+  static const followings = "Followings";
+  static const personalInformation = "Personal Information";
+  static const chnagePassword = "Change Password";
+  static const saveChange = "Save Changes";
+
+  // Search Screen
+  static const search = "Search";
+  static const searchNoSong = "Search Song that you love";
 }

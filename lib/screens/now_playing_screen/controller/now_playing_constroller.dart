@@ -163,7 +163,12 @@ class NowPlayingController extends GetxController
             SizedBox(height: 10),
             Expanded(
               child: ListView.builder(
-                itemBuilder: (context, index) => PlayListItem(isPlaying: false),
+                itemBuilder: (context, index) => PlayListItem(
+                  isPlaying: false,
+                  title: "Young",
+                  subtitle: "Subtitle",
+                  image: AppImages.music1Image,
+                ),
               ),
             ),
           ],

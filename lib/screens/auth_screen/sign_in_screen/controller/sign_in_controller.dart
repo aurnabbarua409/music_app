@@ -4,21 +4,17 @@ import 'package:music_app/routes/app_routes.dart';
 import 'package:music_app/utils/app_log.dart';
 
 class SignInController extends GetxController {
-  late TextEditingController emailController;
-  late TextEditingController passwordController;
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
   RxBool isRememberMe = false.obs;
   final isVisiblePassword = false.obs;
 
-  void onInitial() {
-    emailController = TextEditingController();
-    passwordController = TextEditingController();
-    appLog(title: 'Signin', descrition: 'initialized');
-  }
-
-  void onDispose() {
+  @override
+  void onClose() {
+    // TODO: implement onClose
     emailController.dispose();
     passwordController.dispose();
-    appLog(title: 'signin', descrition: 'disposed');
+    super.onClose();
   }
 
   void onClickedRememberMe() {
@@ -27,6 +23,7 @@ class SignInController extends GetxController {
       title: 'signin screen',
       descrition: 'the value of isRemeberme: ${isRememberMe.value}',
     );
+    update();
   }
 
   void onForgotPassword() {
@@ -35,6 +32,7 @@ class SignInController extends GetxController {
 
   void onIsVisiblePassword() {
     isVisiblePassword.value = !isVisiblePassword.value;
+    update();
   }
 
   void onSignin() {

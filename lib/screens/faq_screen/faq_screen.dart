@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:music_app/constants/app_color.dart';
 import 'package:music_app/constants/app_strings.dart';
 import 'package:music_app/screens/faq_screen/widget/faq_item.dart';
+import 'package:music_app/widgets/appbar_widget.dart';
 import 'package:music_app/widgets/text_widget.dart';
 
 class FaqScreen extends StatelessWidget {
@@ -9,14 +10,8 @@ class FaqScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.black_600,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        foregroundColor: AppColors.white,
-        centerTitle: true,
-        title: Text(AppStrings.faq),
-      ),
+    return AppbarWidget(
+      title: AppStrings.faq,
       body: Column(
         children: [
           FaqItem(

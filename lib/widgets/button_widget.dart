@@ -21,9 +21,11 @@ class ButtonWidget extends StatelessWidget {
     this.borderColor,
     required this.onTap,
     this.iconPosition,
+    this.iconColor,
     this.elevation,
     this.width,
     this.cardColor,
+    this.glassColor,
     this.enableGlassEffect = true,
   }) : buttonType = ButtonType.elevated;
   ButtonWidget.text({
@@ -58,9 +60,11 @@ class ButtonWidget extends StatelessWidget {
   Color? borderColor;
   double? elevation;
   bool enableGlassEffect;
+  Color? iconColor;
   IconPosition? iconPosition;
   final void Function() onTap;
   final ButtonType buttonType;
+  Color? glassColor;
   @override
   Widget build(BuildContext context) {
     if (buttonType == ButtonType.icon) {
@@ -77,7 +81,7 @@ class ButtonWidget extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
               border: Border.all(
-               // color: borderColor ?? AppColors.grey_60,
+                //  color: borderColor!,
                 width: 0.1,
               ),
               shape: BoxShape.circle,
@@ -133,10 +137,11 @@ class ButtonWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(25),
               ),
               child: Row(
+                mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   if (icon != null && iconPosition == IconPosition.beforeText)
-                    IconWidget(icon: icon!),
+                    IconWidget(icon: icon!, color: iconColor),
                   SizedBox(width: 10),
                   TextWidget(
                     text ?? "",
@@ -146,12 +151,12 @@ class ButtonWidget extends StatelessWidget {
                   ),
                   SizedBox(width: 10),
                   if (icon != null && iconPosition == IconPosition.afterText)
-                    IconWidget(icon: icon!),
+                    IconWidget(icon: icon!, color: iconColor),
                 ],
               ),
             ).asGlass(
               enabled: enableGlassEffect,
-              tintColor: Colors.white, // subtle white tint
+              tintColor: glassColor ?? Colors.white, // subtle white tint
               blurX: 20, // horizontal blur
               blurY: 20, // vertical blur
               clipBorderRadius: BorderRadius.circular(25),

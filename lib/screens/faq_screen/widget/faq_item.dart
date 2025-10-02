@@ -11,15 +11,15 @@ class FaqItem extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: ExpansionTile(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusGeometry.circular(20),
+          borderRadius: BorderRadiusGeometry.circular(15),
         ),
         collapsedShape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusGeometry.circular(20),
+          borderRadius: BorderRadiusGeometry.circular(15),
         ),
-        backgroundColor: AppColors.black,
+        backgroundColor: const Color.fromARGB(54, 0, 0, 0),
         iconColor: AppColors.grey_300,
         collapsedIconColor: AppColors.grey_300,
-        collapsedBackgroundColor: AppColors.black,
+        collapsedBackgroundColor: const Color.fromARGB(54, 0, 0, 0),
         // expansionAnimationStyle: AnimationStyle(
         //   curve: Curves.easeInOut,
         //   duration: Duration(milliseconds: 300),

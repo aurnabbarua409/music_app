@@ -28,41 +28,41 @@ class SlotMachineWidget extends StatelessWidget {
         width: double.infinity,
         child: Column(
           children: [
-            Container(
-              color: Colors.red,
-              height: 90,
-              width: 200,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: controller.slotMachineItem.length,
-                itemBuilder: (context, index) => Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    height: 150,
-                    child: SlotMachineRoller(
-                      height: 150,
-                      width: 50,
-                      delay: Duration(seconds: 1),
-                      reverse: true,
-                      minTarget: 0,
-                      target: controller.slotMachineTarget[index],
-                      maxTarget: controller.slotMachineItem.length - 1,
-                      itemBuilder: (e) => Container(
-                        margin: EdgeInsets.symmetric(vertical: 10),
-                        height: 50,
-                        width: 150,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.rectangle,
-                          color: Colors.white,
-                        ),
-                        child: Image.asset(controller.slotMachineItem[e]),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            // Container(
+            //   color: Colors.red,
+            //   height: 90,
+            //   width: 200,
+            //   child: ListView.builder(
+            //     scrollDirection: Axis.horizontal,
+            //     itemCount: controller.slotMachineItem.length,
+            //     itemBuilder: (context, index) => Padding(
+            //       padding: const EdgeInsets.all(8.0),
+            //       child: SizedBox(
+            //         height: 150,
+            //         child: SlotMachineRoller(
+            //           height: 150,
+            //           width: 50,
+            //           delay: Duration(seconds: 1),
+            //           reverse: true,
+            //           minTarget: 0,
+            //           target: controller.slotMachineTarget[index],
+            //           maxTarget: controller.slotMachineItem.length - 1,
+            //           itemBuilder: (e) => Container(
+            //             margin: EdgeInsets.symmetric(vertical: 10),
+            //             height: 50,
+            //             width: 150,
+            //             alignment: Alignment.center,
+            //             decoration: BoxDecoration(
+            //               shape: BoxShape.rectangle,
+            //               color: Colors.white,
+            //             ),
+            //             child: Image.asset(controller.slotMachineItem[e]),
+            //           ),
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
             Image.asset(AppImages.spinWheel),
             SizedBox(height: 20),
             ButtonWidget(
