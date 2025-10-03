@@ -1,6 +1,7 @@
-# music_app
+# music_app (Need a lot of modification)
 
-A new Flutter project.
+A new Flutter project. If you can modify, do it. I have kept a lot of bugs in this project willingly. Find them and solve like a puzzle game. You may find some, others are hidden. 
+** A little hint: To find the hidden bugs, act like a user. 
 
 ## Getting Started
 
