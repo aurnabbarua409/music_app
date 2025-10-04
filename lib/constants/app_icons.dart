@@ -57,4 +57,15 @@ class AppIcons {
   static const userIcon = "$_baseName/user_icon.png";
   static const emailIcon = "$_baseName/email_icon.png";
   static const musicIcon4 = "$_baseName/music_icon4.png";
+  static const uploadSongIcon = "$_baseName/upload_song.png";
+  static const editPlaylistIcon = "$_baseName/edit_playlist.png";
+  static const editInfoIcon = "$_baseName/edit_info.png";
+  static const deletePlayListIcon = "$_baseName/delete_playlist.png";
+  static const deletePlaylistIcon1 = "$_baseName/delete_playlist1.png";
+  static const minusIcon = "$_baseName/minus_icon.png";
+  static const menuIcon = "$_baseName/menu_icon.png";
+  static const libraryIcon = "$_baseName/library_icon.png";
+  static const downloadIcon2 = "$_baseName/download_icon1.png";
+  static const audioUploadIcon = "$_baseName/audio_upload.png";
+  static const uploadImageIcon = "$_baseName/upload_image.png";
 }

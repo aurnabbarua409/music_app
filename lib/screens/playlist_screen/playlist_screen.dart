@@ -123,6 +123,7 @@ class PlaylistScreen extends StatelessWidget {
                             subtitle: "The chainsmoker",
                             image: AppImages.music1Image,
                             ontap: controller.onClickSong,
+                            onShowMore: controller.onShowMore,
                           ),
                         ),
                       )

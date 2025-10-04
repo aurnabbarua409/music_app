@@ -27,4 +27,9 @@ class AppRoutes {
   static const profileScreen = "/profile_screen";
   static const editProfileScreen = "/edit_profile_screen";
   static const addThisPlaylistScreen = "/add_this_playlist_screen";
+  static const editInfoScreen = "/edit_info_screen";
+  static const editPlaylistScreen = "/edit_playlist_screen";
+  static const likedSongScreen = "/liked_song_screen";
+  static const likedPlaylistScreen = "/liked_playlist_screen";
+  static const uploadNewSongScreen = "/upload_new_song_screen";
 }

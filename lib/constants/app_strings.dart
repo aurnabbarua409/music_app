@@ -98,6 +98,9 @@ class AppStrings {
   static const info = "Info";
   static const writeComment = "Write a comment";
   static const follow = "Follow";
+  static const editPlayList = "Edit Playlist";
+  static const editInfo = "Edit Info";
+  static const deletePlaylist = "Delete playlist";
 
   // Now playing screen
   static const nowPlaying = "Now Playing";
@@ -135,4 +138,38 @@ class AppStrings {
   // Search Screen
   static const search = "Search";
   static const searchNoSong = "Search Song that you love";
+
+  // Add to this playlist
+  static const recommended = "Recommended";
+
+  // Edit info screen
+  static const description = "Description";
+  static const coverImage = "Cover Image";
+  static const privacy = "Privacy";
+  static const onlyMe = "Only me";
+  static const public = "Public";
+  static const changeCover = "Change Cover";
+
+  // delete playlist
+  static const deleteDetails =
+      "Are you sure you want to delete this Playlist ?";
+  static const delete = "Delete";
+
+  // library screen
+  static const yourLibrary = "Your Library";
+  static const likedSong = "Liked Song";
+  static const downloads = "Downloads";
+  static const myPlaylists = "My Playlists";
+  static const myListings = "My listings";
+  static const likedPlaylist = "Liked Playlist";
+
+  // Upload new track screen
+  static const uploadNewTrack = "Upload New Track";
+  static const uploadAudioFile = "Upload Audio file";
+  static const browseSong = "Browse Song (Max 20MB)";
+  static const trackCoverArt = "Track Cover Art";
+  static const chooseCover = "Choose Cover";
+  static const genre = "Genre";
+  static const selectGenre = "Select Genre";
+  static const uploadTrack = "Upload Track";
 }

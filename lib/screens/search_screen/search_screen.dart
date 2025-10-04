@@ -63,6 +63,7 @@ class SearchScreen extends StatelessWidget {
                             subtitle: "The Chainsmoker",
                             title: "Young",
                             showMore: false,
+
                             backgroundColor: Colors.transparent,
                             borderColor: AppColors.grey_60,
                           ),

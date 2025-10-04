@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/foundation.dart';
 
 Future<void> appLog({
@@ -5,8 +7,8 @@ Future<void> appLog({
   required dynamic descrition,
 }) async {
   if (kDebugMode) {
-    print("===================== $title ==========================\n");
-    print(descrition);
-    print("========================================================\n");
+    log("===================== $title ==========================\n");
+    log(descrition);
+    log("========================================================\n");
   }
 }

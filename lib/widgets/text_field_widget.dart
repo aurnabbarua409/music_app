@@ -62,12 +62,10 @@ class TextFieldWidget extends StatelessWidget {
             child: TextFormField(
               autofocus: true,
               obscureText: obscureText,
+
               controller: controller,
               cursorColor: AppColors.grey_60,
-              style: TextStyle(
-                color: AppColors.grey_60,
-                backgroundColor: backgroundColor,
-              ),
+              style: TextStyle(color: AppColors.grey_60),
               maxLines: maxLines,
               decoration: InputDecoration(
                 suffixIcon: suffixIcon,
@@ -80,7 +78,8 @@ class TextFieldWidget extends StatelessWidget {
                   fontSize: 14,
                 ),
                 focusColor: AppColors.grey_60,
-                fillColor: AppColors.grey_60,
+                fillColor: backgroundColor,
+                filled: true,
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: AppColors.grey_60,

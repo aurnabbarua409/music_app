@@ -5,6 +5,7 @@ import 'package:music_app/constants/app_icons.dart';
 import 'package:music_app/constants/app_images.dart';
 import 'package:music_app/constants/app_strings.dart';
 import 'package:music_app/routes/app_routes.dart';
+import 'package:music_app/screens/playlist_screen/widgets/more_item.dart';
 import 'package:music_app/utils/app_log.dart';
 import 'package:music_app/widgets/button_widget.dart';
 import 'package:music_app/widgets/icon_widget.dart';
@@ -165,5 +166,85 @@ class PlaylistController extends GetxController {
   void onSendComment() {
     appLog(title: 'After sending message', descrition: commentController.text);
     commentController.clear();
+  }
+
+  void onShowMore() {
+    Get.bottomSheet(
+      Container(
+        padding: EdgeInsets.all(20),
+        decoration: BoxDecoration(color: AppColors.black_700),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            MoreItem(
+              icon: AppIcons.uploadSongIcon,
+              text: AppStrings.uploadSong,
+              ontap: () {
+                Get.toNamed(AppRoutes.uploadNewSongScreen);
+              },
+            ),
+            MoreItem(
+              icon: AppIcons.editPlaylistIcon,
+              text: AppStrings.editPlayList,
+              ontap: () {
+                Get.toNamed(AppRoutes.editPlaylistScreen);
+              },
+            ),
+            MoreItem(
+              icon: AppIcons.editInfoIcon,
+              text: AppStrings.editInfo,
+              ontap: () => Get.toNamed(AppRoutes.editInfoScreen),
+            ),
+            MoreItem(
+              icon: AppIcons.deletePlayListIcon,
+              text: AppStrings.deletePlaylist,
+              ontap: deletePlaylist,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void deletePlaylist() {
+    Get.dialog(
+      Dialog(
+        backgroundColor: AppColors.black_700,
+        child: Container(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              IconWidget(icon: AppIcons.deletePlaylistIcon1),
+              SizedBox(height: 10),
+              TextWidget(AppStrings.deleteDetails),
+              SizedBox(height: 10),
+              Row(
+                children: [
+                  Expanded(
+                    child: ButtonWidget.normal(
+                      onTap: () {
+                        Get.back();
+                      },
+                      text: AppStrings.cancel,
+                      backgroundColor: Colors.transparent,
+                      borderColor: AppColors.grey_60,
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: ButtonWidget.normal(
+                      onTap: () {},
+                      text: AppStrings.delete,
+                      backgroundColor: AppColors.red_500,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

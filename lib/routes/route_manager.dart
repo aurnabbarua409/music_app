@@ -11,6 +11,8 @@ import 'package:music_app/screens/auth_screen/sign_up_screen/sign_up_screen.dart
 import 'package:music_app/screens/auth_screen/verify_otp_screen/verify_otp_screen.dart';
 import 'package:music_app/screens/bottom_navbar_screen/bottom_navbar_screen.dart';
 import 'package:music_app/screens/change_password_screen/change_password_screen.dart';
+import 'package:music_app/screens/edit_info_screen/edit_info_screen.dart';
+import 'package:music_app/screens/edit_playlist_screen/edit_playlist_screen.dart';
 import 'package:music_app/screens/help_support_screen/help_support_screen.dart';
 import 'package:music_app/screens/create_new_playlist_screen/create_new_playlist_screen.dart';
 import 'package:music_app/screens/delete_account_screen/delete_account_screen.dart';
@@ -18,6 +20,8 @@ import 'package:music_app/screens/edit_profile_screen/edit_profile_screen.dart';
 import 'package:music_app/screens/faq_screen/faq_screen.dart';
 import 'package:music_app/screens/help_support_screen/help_support_screen.dart';
 import 'package:music_app/screens/home_screen/home_screen.dart';
+import 'package:music_app/screens/liked_playlist_screen/liked_playlist_screen.dart';
+import 'package:music_app/screens/liked_song_screen/liked_song_screen.dart';
 import 'package:music_app/screens/new_playlist_screen/new_playlist_screen.dart';
 import 'package:music_app/screens/notification_screen/notification_screen.dart';
 import 'package:music_app/screens/notification_setting_screen/notification_setting_screen.dart';
@@ -29,6 +33,7 @@ import 'package:music_app/screens/privacy_policy_screen/privacy_policy_screen.da
 import 'package:music_app/screens/profile_screen/profile_screen.dart';
 import 'package:music_app/screens/splash_screen/splash_screen.dart';
 import 'package:music_app/screens/term_condition_screen/term_condition_screen.dart';
+import 'package:music_app/screens/upload_song_screen/upload_song_screen.dart';
 import 'package:music_app/widgets/custom_transition_widget.dart';
 
 class RouteManager {
@@ -126,6 +131,17 @@ class RouteManager {
         name: AppRoutes.addThisPlaylistScreen,
         page: AddThisPlaylist(),
       ),
+      customPage(name: AppRoutes.editInfoScreen, page: EditInfoScreen()),
+      customPage(
+        name: AppRoutes.editPlaylistScreen,
+        page: EditPlaylistScreen(),
+      ),
+      customPage(name: AppRoutes.likedSongScreen, page: LikedSongScreen()),
+      customPage(
+        name: AppRoutes.likedPlaylistScreen,
+        page: LikedPlaylistScreen(),
+      ),
+      customPage(name: AppRoutes.uploadNewSongScreen, page: UploadSongScreen())
     ];
   }
 }

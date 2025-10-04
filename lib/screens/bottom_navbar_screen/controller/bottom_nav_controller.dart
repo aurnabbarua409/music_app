@@ -6,6 +6,7 @@ import 'package:music_app/constants/app_strings.dart';
 import 'package:music_app/routes/app_routes.dart';
 import 'package:music_app/screens/bottom_navbar_screen/widgets/bordered_icon_widget.dart';
 import 'package:music_app/screens/home_screen/home_screen.dart';
+import 'package:music_app/screens/library_screen/library_screen.dart';
 import 'package:music_app/screens/profile_screen/profile_screen.dart';
 import 'package:music_app/screens/search_screen/search_screen.dart';
 import 'package:music_app/utils/app_log.dart';
@@ -16,7 +17,7 @@ class BottomNavController extends GetxController {
 
   final List<Widget> pages = [
     HomeScreen(),
-    HomeScreen(),
+    LibraryScreen(),
     HomeScreen(),
     SearchScreen(),
     ProfileScreen(),
@@ -59,17 +60,23 @@ class BottomNavController extends GetxController {
               ),
             ),
             SizedBox(height: 10),
-            Row(
-              children: [
-                BorderedIconWidget(icon: AppIcons.uploadIcon),
-                SizedBox(width: 10),
-                TextWidget(
-                  AppStrings.uploadSong,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors.fadeWhite,
-                ),
-              ],
+            InkWell(
+              onTap: () {
+                Get.back();
+                Get.toNamed(AppRoutes.uploadNewSongScreen);
+              },
+              child: Row(
+                children: [
+                  BorderedIconWidget(icon: AppIcons.uploadIcon),
+                  SizedBox(width: 10),
+                  TextWidget(
+                    AppStrings.uploadSong,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.fadeWhite,
+                  ),
+                ],
+              ),
             ),
           ],
         ),

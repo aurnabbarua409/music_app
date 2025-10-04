@@ -6,7 +6,7 @@ class ImageWidget extends StatelessWidget {
     required this.image,
     this.height,
     this.width,
-    this.fit,
+    this.fit = BoxFit.cover,
   });
   final String image;
   final double? height;

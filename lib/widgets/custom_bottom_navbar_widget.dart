@@ -23,7 +23,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   Widget build(BuildContext context) {
     final items = [
       AppIcons.homeIcon,
-      AppIcons.exploreIcon,
+      AppIcons.libraryIcon,
       AppIcons.addCircleIcon,
       AppIcons.searchIcon,
       AppIcons.profileIcon,
@@ -48,24 +48,25 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
 
                 return InkWell(
                   onTap: () => widget.onItemSelected(index),
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 250),
-                    padding: const EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        width: 0.1,
-                        color: isSelected
-                            ? AppColors.grey_60
-                            : Colors.transparent,
+                  child:
+                      AnimatedContainer(
+                        duration: const Duration(milliseconds: 250),
+                        padding: const EdgeInsets.all(15),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 0.1,
+                            color: isSelected
+                                ? AppColors.grey_60
+                                : Colors.transparent,
+                          ),
+                          shape: BoxShape.circle,
+                        ),
+                        child: IconWidget(icon: items[index], scale: 1.2),
+                      ).asGlass(
+                        enabled: isSelected,
+                        clipBorderRadius: BorderRadius.circular(50),
+                        tintColor: const Color.fromARGB(255, 255, 0, 0),
                       ),
-                      shape: BoxShape.circle,
-                    ),
-                    child: IconWidget(icon: items[index], scale: 1.2),
-                  ).asGlass(
-                    enabled: isSelected,
-                    clipBorderRadius: BorderRadius.circular(50),
-                    tintColor: const Color.fromARGB(255, 255, 0, 0),
-                  ),
                 );
               }),
             ),

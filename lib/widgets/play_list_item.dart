@@ -18,6 +18,7 @@ class PlayListItem extends StatelessWidget {
     this.showMore = true,
     this.backgroundColor,
     this.borderColor = Colors.transparent,
+    this.onShowMore,
   });
   final bool isPlaying;
   final void Function()? ontap;
@@ -27,91 +28,94 @@ class PlayListItem extends StatelessWidget {
   final bool showMore;
   final Color? backgroundColor;
   final Color borderColor;
+  final void Function()? onShowMore;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: ontap,
-
-      borderRadius: BorderRadius.circular(15),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 7),
-        child: Card(
-          elevation: 6,
-          color: backgroundColor,
-          margin: EdgeInsets.zero,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadiusGeometry.circular(15),
-          ),
-          child:
-              Container(
-                // margin: EdgeInsets.symmetric(vertical: 7),
-                decoration: BoxDecoration(
-                  color:
-                      backgroundColor ??
-                      (isPlaying ? AppColors.black_900 : AppColors.black),
-                  // border: Border.all(color: AppColors.grey_60, width: 0.2),
-                  borderRadius: BorderRadius.circular(15),
-                  border: Border.all(color: borderColor, width: 0.3),
-                ),
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                height: 52,
-                width: double.infinity,
-                child: Row(
-                  children: [
-                    ImageWidget(
-                      image: AppImages.music1Image,
-                      width: 32,
-                      height: 32,
-                      fit: BoxFit.cover,
-                    ),
-                    SizedBox(width: 6),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 7),
+      child: Card(
+        elevation: 6,
+        color: backgroundColor,
+        margin: EdgeInsets.zero,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadiusGeometry.circular(15),
+        ),
+        child:
+            Container(
+              // margin: EdgeInsets.symmetric(vertical: 7),
+              decoration: BoxDecoration(
+                color:
+                    backgroundColor ??
+                    (isPlaying ? AppColors.black_900 : AppColors.black),
+                // border: Border.all(color: AppColors.grey_60, width: 0.2),
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(color: borderColor, width: 0.3),
+              ),
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              height: 52,
+              width: double.infinity,
+              child: Row(
+                children: [
+                  InkWell(
+                    onTap: ontap,
+                    child: Row(
                       children: [
-                        TextWidget(
-                          title,
-                          color: AppColors.orange,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
+                        ImageWidget(
+                          image: AppImages.music1Image,
+                          width: 32,
+                          height: 32,
+                          fit: BoxFit.cover,
                         ),
-                        TextWidget(
-                          subtitle,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.white_900,
+                        SizedBox(width: 6),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            TextWidget(
+                              title,
+                              color: AppColors.orange,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            TextWidget(
+                              subtitle,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.white_900,
+                            ),
+                          ],
                         ),
                       ],
                     ),
-                    Spacer(),
-                    if (isPlaying)
-                      IconButtonWidget(
-                        icon: AppIcons.musicPLayingIcon,
-                        width: 18,
-                        height: 18,
-                        onTap: () {},
-                      ),
-                    SizedBox(width: 10),
+                  ),
+                  Spacer(),
+                  if (isPlaying)
                     IconButtonWidget(
-                      icon: AppIcons.addCircleIcon,
-                      height: 13.33,
+                      icon: AppIcons.musicPLayingIcon,
+                      width: 18,
+                      height: 18,
                       onTap: () {},
                     ),
-                    if (showMore) ...[
-                      SizedBox(width: 10),
-                      IconButtonWidget(
-                        icon: AppIcons.moreVertIcon,
-                        height: 16,
-                        onTap: () {},
-                      ),
-                    ],
+                  SizedBox(width: 10),
+                  IconButtonWidget(
+                    icon: AppIcons.addCircleIcon,
+                    height: 13.33,
+                    onTap: () {},
+                  ),
+                  if (showMore) ...[
+                    SizedBox(width: 10),
+                    IconButtonWidget(
+                      icon: AppIcons.moreVertIcon,
+                      height: 16,
+                      onTap: onShowMore ?? () => {},
+                    ),
                   ],
-                ),
-              ).asGlass(
-                tintColor: backgroundColor ?? AppColors.white,
-                clipBorderRadius: BorderRadius.circular(15),
+                ],
               ),
-        ),
+            ).asGlass(
+              tintColor: backgroundColor ?? AppColors.white,
+              clipBorderRadius: BorderRadius.circular(15),
+            ),
       ),
     );
   }
